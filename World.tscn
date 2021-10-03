@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://Material.material" type="Material" id=1]
 [ext_resource path="res://Droid.tscn" type="PackedScene" id=2]
@@ -6,7 +6,12 @@
 [ext_resource path="res://World.gd" type="Script" id=4]
 [ext_resource path="res://Label.gd" type="Script" id=5]
 [ext_resource path="res://Main UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://items/SteelBeams.tscn" type="PackedScene" id=7]
 [ext_resource path="res://PickupLabel.gd" type="Script" id=8]
+[ext_resource path="res://items/IronOre.tscn" type="PackedScene" id=9]
+[ext_resource path="res://items/AluminumBeams.tscn" type="PackedScene" id=10]
+[ext_resource path="res://items/Carbon.tscn" type="PackedScene" id=11]
+[ext_resource path="res://items/SteelPipes.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Floor0"
@@ -851,7 +856,7 @@ __meta__ = {
 }
 
 [node name="Droid" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2595, 0.718759, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.752, 1.40462, 0 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -1.48842e-08, 0.940241, -0.340511, 4.10992e-08, 0.340511, 0.940241, 1, 4.44089e-15, -4.37114e-08, 8.86641, 10.7563, -0.27624 )
@@ -944,8 +949,24 @@ text = "Buy"
 
 [node name="Main UI" parent="PriceUILayer" instance=ExtResource( 6 )]
 
+[node name="IronOre" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3379, 0.639346, 3.9475 )
+
+[node name="SteelBeams" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9353, 0.737887, 5.52409 )
+
+[node name="Carbon" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9465, 0.638767, 4.7525 )
+
+[node name="AluminumBeams" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98123, 0.635776, 0 )
+
+[node name="SteelPipes" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05956, 0.638775, 3.41045 )
+
 [connection signal="can_pick_up" from="Droid" to="GameplayUILayer/PickupLabel" method="_on_Droid_can_pick_up"]
 [connection signal="cannot_pick_up" from="Droid" to="GameplayUILayer/PickupLabel" method="_on_Droid_cannot_pick_up"]
+[connection signal="too_full_to_pick_up" from="Droid" to="GameplayUILayer/PickupLabel" method="_on_Droid_too_full_to_pick_up"]
 [connection signal="body_entered" from="ExpansionArea" to="." method="_on_ExpansionArea_body_entered"]
 [connection signal="body_entered" from="ExpansionArea" to="Droid" method="_on_ExpansionArea_body_entered"]
 [connection signal="body_exited" from="ExpansionArea" to="." method="_on_ExpansionArea_body_exited"]
