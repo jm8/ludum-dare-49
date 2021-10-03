@@ -22,21 +22,29 @@ surfaces/0 = {
 bounce = 0.1
 
 [sub_resource type="SphereShape" id=3]
+radius = 0.5
 
 [node name="Droid" type="Spatial"]
 script = ExtResource( 2 )
 
 [node name="MeshWithoutOffset" type="Spatial" parent="."]
 
-[node name="DroidMesh" type="MeshInstance" parent="MeshWithoutOffset"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.042366, -0.961656, -0.581448 )
+[node name="SmallBoy" type="Spatial" parent="MeshWithoutOffset"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0834702, 0.0269929 )
+
+[node name="DroidMesh" type="MeshInstance" parent="MeshWithoutOffset/SmallBoy"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.042366, -0.619998, -0.581448 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="RayCast" type="RayCast" parent="MeshWithoutOffset"]
+[node name="RayCast" type="RayCast" parent="MeshWithoutOffset/SmallBoy/DroidMesh"]
+transform = Transform( -8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -0.527462, 0.786938, -0.042366 )
+enabled = true
 
 [node name="RigidBody" type="RigidBody" parent="."]
 physics_material_override = SubResource( 2 )
+gravity_scale = 5.0
+linear_damp = 2.0
 angular_damp = 5.0
 
 [node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
