@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://Material.material" type="Material" id=1]
 [ext_resource path="res://Droid.tscn" type="PackedScene" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://World.gd" type="Script" id=4]
 [ext_resource path="res://Label.gd" type="Script" id=5]
 [ext_resource path="res://Main UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://items/SteelBeams.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PickupLabel.gd" type="Script" id=8]
+[ext_resource path="res://items/IronOre.tscn" type="PackedScene" id=9]
+[ext_resource path="res://items/AluminumBeams.tscn" type="PackedScene" id=10]
+[ext_resource path="res://items/Carbon.tscn" type="PackedScene" id=11]
+[ext_resource path="res://items/SteelPipes.tscn" type="PackedScene" id=12]
 [ext_resource path="res://reactor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/mixer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://items/AluminumBeams.tscn" type="PackedScene" id=9]
@@ -937,6 +943,24 @@ text = "Buy"
 
 [node name="Main UI" parent="PriceUILayer" instance=ExtResource( 6 )]
 
+[node name="IronOre" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3379, 0.639346, 3.9475 )
+
+[node name="SteelBeams" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9353, 0.737887, 5.52409 )
+
+[node name="Carbon" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9465, 0.638767, 4.7525 )
+
+[node name="AluminumBeams" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98123, 0.635776, 0 )
+
+[node name="SteelPipes" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05956, 0.638775, 3.41045 )
+
+[connection signal="can_pick_up" from="Droid" to="GameplayUILayer/PickupLabel" method="_on_Droid_can_pick_up"]
+[connection signal="cannot_pick_up" from="Droid" to="GameplayUILayer/PickupLabel" method="_on_Droid_cannot_pick_up"]
+[connection signal="too_full_to_pick_up" from="Droid" to="GameplayUILayer/PickupLabel" method="_on_Droid_too_full_to_pick_up"]
 [node name="Spatial" parent="." instance=ExtResource( 7 )]
 transform = Transform( -8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 13.3143, 0, 3.7326 )
 
