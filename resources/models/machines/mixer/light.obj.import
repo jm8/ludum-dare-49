@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/light.obj-c82ba63388998cc42e18991f57266d86.mesh"
+
+[deps]
+
+files=[ "res://.import/light.obj-c82ba63388998cc42e18991f57266d86.mesh" ]
+
+source_file="res://resources/models/machines/mixer/light.obj"
+dest_files=[ "res://.import/light.obj-c82ba63388998cc42e18991f57266d86.mesh", "res://.import/light.obj-c82ba63388998cc42e18991f57266d86.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

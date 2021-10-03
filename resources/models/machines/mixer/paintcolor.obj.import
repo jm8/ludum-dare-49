@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/paintcolor.obj-b8adbb8d6f1b3fbe30208051c8ea90ca.mesh"
+
+[deps]
+
+files=[ "res://.import/paintcolor.obj-b8adbb8d6f1b3fbe30208051c8ea90ca.mesh" ]
+
+source_file="res://resources/models/machines/mixer/paintcolor.obj"
+dest_files=[ "res://.import/paintcolor.obj-b8adbb8d6f1b3fbe30208051c8ea90ca.mesh", "res://.import/paintcolor.obj-b8adbb8d6f1b3fbe30208051c8ea90ca.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

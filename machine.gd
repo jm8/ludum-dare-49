@@ -1,31 +1,29 @@
 extends Node
 
-export(Dictionary) var inputs
-export(Dictionary) var outputs
+export(Array) var recipes
 
+var current_recipe: int = -1
 var contents: Dictionary
 export(Dictionary) var capacity
 
-func _ready():
-	assert(capacity.has_all(inputs.keys()))
-	assert(capacity.has_all(outputs.keys()))
-	for i in capacity:
-		contents[i] = 0.0
-	contents["Iron"] = 6.0
-
 
 func _process(delta):
-	var max_delta = delta;
-	
-	for input in inputs:
-		max_delta = min(max_delta, contents[input] / inputs[input]) 
-		
-	for output in outputs:
-		max_delta = min(max_delta, (capacity[output] - contents[output]) / outputs[output])
+	var max_recipe: int = -1
+	var max_delta: float = 0
+	for i in range(recipes.size()):
+		var recipe_delta = recipes[i].max_delta(delta, contents, capacity)
+		if recipe_delta > max_delta:
+			max_delta = recipe_delta
+			max_recipe = i
 
-	for input in inputs:
-		contents[input] -= inputs[input] * max_delta
-	for output in outputs:
-		contents[output] += outputs[output] * max_delta
+	current_recipe = max_recipe
+
+	if max_delta <= 0 || max_recipe == -1:
+		return
+	
+	for input in recipes[max_recipe].inputs:
+		contents[input] -= recipes[max_recipe].inputs[input] * max_delta
+	for output in recipes[max_recipe]:
+		contents[output] += recipes[max_recipe].outputs[output] * max_delta
 		
 	print(contents)

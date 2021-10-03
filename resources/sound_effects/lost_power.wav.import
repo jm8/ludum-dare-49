@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lost_power.wav-ebcbc4b4fe4fc2773a21358c162afafc.sample"
+
+[deps]
+
+source_file="res://resources/sound_effects/lost_power.wav"
+dest_files=[ "res://.import/lost_power.wav-ebcbc4b4fe4fc2773a21358c162afafc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
