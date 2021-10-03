@@ -1,6 +1,7 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Material.material" type="Material" id=1]
+[ext_resource path="res://Droid.tscn" type="PackedScene" id=2]
 
 [sub_resource type="ArrayMesh" id=71]
 resource_name = "Floor0"
@@ -819,3 +820,10 @@ __meta__ = {
 "_editor_clip_": 0,
 "_editor_floor_": Vector3( 0, 0, 0 )
 }
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.744859, 0, 0.667222, 0, 1, 0, -0.667222, 0, -0.744859, 6.13495, 5.09517, -9.68228 )
+current = true
+
+[node name="Droid" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.98183, 0 )
