@@ -1,7 +1,10 @@
 extends KinematicBody
+class_name Droid
 
 onready var cast = $RayCast
 onready var mesh = $NormalBoy
+
+## Movement
 
 var gravity = Vector3(0, -40, 0)
 var speed = 1.7
@@ -33,3 +36,38 @@ func align_with_y(xform, new_y):
 	xform.basis.x = -xform.basis.z.cross(new_y)
 	xform.basis = xform.basis.orthonormalized()
 	return xform
+
+## Items
+
+signal can_pick_up(item)
+signal cannot_pick_up(item)
+var item_to_pickup
+var held_item
+
+func _on_CollectionArea_area_entered(area):
+	if area is GameItem and !held_item:
+		can_pick_up(area)
+
+func _on_CollectionArea_area_exited(area):
+	if item_to_pickup == area:
+		cannot_pick_up(area)
+
+func _process(delta):
+	if Input.is_action_just_pressed("pickup"):
+		if item_to_pickup:
+			item_to_pickup.attach_to(self)
+			held_item = item_to_pickup
+			cannot_pick_up(item_to_pickup)
+		elif held_item:
+			can_pick_up(held_item)
+			held_item.drop()
+			held_item = null
+			
+		
+func can_pick_up(item):
+	emit_signal("can_pick_up", item)
+	item_to_pickup = item
+	
+func cannot_pick_up(item):
+	emit_signal("cannot_pick_up", item)
+	item_to_pickup = null

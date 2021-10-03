@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Material_001.material" type="Material" id=1]
 [ext_resource path="res://Droid.gd" type="Script" id=2]
@@ -21,6 +21,9 @@ surfaces/0 = {
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.197433, 0.2777, 0.468494 )
 
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.369389, 0.379921, 1 )
+
 [node name="Droid" type="KinematicBody"]
 script = ExtResource( 2 )
 
@@ -39,3 +42,14 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.316986, 0 )
 enabled = true
 cast_to = Vector3( 0, -2, 0 )
+
+[node name="CollectionArea" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="CollectionArea"]
+shape = SubResource( 3 )
+
+[node name="HoldPosition" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0146326, 0.149512, 0.110387 )
+
+[connection signal="area_entered" from="CollectionArea" to="." method="_on_CollectionArea_area_entered"]
+[connection signal="area_exited" from="CollectionArea" to="." method="_on_CollectionArea_area_exited"]

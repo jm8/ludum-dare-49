@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://Material.material" type="Material" id=1]
 [ext_resource path="res://Droid.tscn" type="PackedScene" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://World.gd" type="Script" id=4]
 [ext_resource path="res://Label.gd" type="Script" id=5]
 [ext_resource path="res://Main UI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://items/iron/IronOre.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PickupLabel.gd" type="Script" id=8]
+[ext_resource path="res://items/iron/IronBeams.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Floor0"
@@ -871,16 +874,30 @@ shape = SubResource( 78 )
 [node name="GameplayUILayer" type="CanvasLayer" parent="."]
 
 [node name="Debug" type="Control" parent="GameplayUILayer"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="GameplayUILayer/Debug"]
+[node name="GridPosition" type="Label" parent="GameplayUILayer/Debug"]
 margin_right = 40.0
 margin_bottom = 14.0
 script = ExtResource( 5 )
+
+[node name="PickupLabel" type="Label" parent="GameplayUILayer"]
+visible = false
+margin_left = 53.127
+margin_top = 285.268
+margin_right = 237.127
+margin_bottom = 322.268
+size_flags_vertical = 7
+text = "Press E to pick up"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ExpansionDialog" type="ColorRect" parent="GameplayUILayer"]
 visible = false
@@ -913,15 +930,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="GameplayUILayer/ExpansionDialog/MarginContainer/VBoxContainer"]
-margin_right = 184.0
-margin_bottom = 37.0
-size_flags_vertical = 7
-text = "Buy expansion?"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="BuyExpansionButton" type="Button" parent="GameplayUILayer/ExpansionDialog/MarginContainer/VBoxContainer"]
 margin_top = 41.0
 margin_right = 184.0
@@ -932,6 +940,14 @@ text = "Buy"
 
 [node name="Main UI" parent="PriceUILayer" instance=ExtResource( 6 )]
 
+[node name="IronOre" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.82659, 0.658569, -1.66836 )
+
+[node name="IronBeams" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5703, 0.881765, 3.34484 )
+
+[connection signal="can_pick_up" from="Droid" to="GameplayUILayer/PickupLabel" method="_on_Droid_can_pick_up"]
+[connection signal="cannot_pick_up" from="Droid" to="GameplayUILayer/PickupLabel" method="_on_Droid_cannot_pick_up"]
 [connection signal="body_entered" from="ExpansionArea" to="." method="_on_ExpansionArea_body_entered"]
 [connection signal="body_entered" from="ExpansionArea" to="Droid" method="_on_ExpansionArea_body_entered"]
 [connection signal="body_exited" from="ExpansionArea" to="." method="_on_ExpansionArea_body_exited"]
