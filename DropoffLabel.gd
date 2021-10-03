@@ -1,6 +1,6 @@
 extends Label
 
-var sell_format = "Sell %s for £%.2f"
+var sell_format = "Sell %s for €%.2f"
 var no_sell_format = "Nothing to sell"
 
 var current_pad = null

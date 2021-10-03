@@ -64,9 +64,10 @@ func _process(delta):
 				item_to_pickup.attach_to(self)
 				held_items.push_back(item_to_pickup)
 				cannot_pick_up(item_to_pickup)
-		elif held_items.size() >0:
-			can_pick_up(held_items[len(held_items)-1])
-			held_items[len(held_items) -1].drop()
+		elif held_items.size() > 0:
+			var item = held_items[len(held_items)-1]
+			can_pick_up(item)
+			item.drop()
 			held_items.pop_back()
 			
 		
