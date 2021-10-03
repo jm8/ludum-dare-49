@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/electrolyzer.wav-3fc59b50613e9a7a6f6dd0f97e0724ab.sample"
+
+[deps]
+
+source_file="res://resources/electrolyzer.wav"
+dest_files=[ "res://.import/electrolyzer.wav-3fc59b50613e9a7a6f6dd0f97e0724ab.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
