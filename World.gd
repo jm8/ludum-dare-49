@@ -13,11 +13,11 @@ onready var expansion_area_increment = gridmap.world_to_map(expansion_area.globa
 
 func _on_ExpansionArea_body_entered(body):
 	if body == droidbody:
-		$UI/ExpansionDialog.visible = true
+		$GameplayUILayer/ExpansionDialog.visible = true
 
 func _on_ExpansionArea_body_exited(body):
 	if body == droidbody:
-		$UI/ExpansionDialog.visible = false
+		$GameplayUILayer/ExpansionDialog.visible = false
 
 func _on_BuyExpansionButton_pressed():
 	var areapos = gridmap.world_to_map(expansion_area.global_transform.origin)
