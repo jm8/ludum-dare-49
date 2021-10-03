@@ -9,7 +9,7 @@ func _ready():
 	$Machine.contents["Aluminum"] = 10
 	$Machine.contents["Copper"] = 10
 
-func _process(delta):
+func _process(_delta):
 	if $Machine.is_active():
 		$"mixer-animation/AnimationPlayer".play("spin")
 		$light/OmniLight.light_color = Color.green

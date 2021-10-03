@@ -5,6 +5,7 @@
 [node name="PriceManager" type="Node"]
 script = ExtResource( 1 )
 sale_goods = {
+"Aluminum Beams": 3000.0,
 "Iron": 1500.0,
 "Steel": 2500.0
 }

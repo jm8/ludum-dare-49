@@ -27,6 +27,9 @@ func _process(_delta):
 		
 	$"HUD/Top Bar/PowerMeter".value = Globals.power
 	$"HUD/Top Bar/PowerMeter".max_value = Globals.power_max
+	
+	$"HUD/Top Bar/MoneyLabel".text = "%2.2f€" % (Globals.money / 100.0)
+	
 
 func on_price_pinned(button_pressed: bool, product: String):
 	if button_pressed:
