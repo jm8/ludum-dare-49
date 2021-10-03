@@ -1,48 +1,73 @@
-extends Spatial
+extends KinematicBody
+class_name Droid
 
-onready var physics = $RigidBody
-onready var meshwithoutoffset = $MeshWithoutOffset
-onready var cast = $MeshWithoutOffset/SmallBoy/DroidMesh/RayCast
+onready var cast = $RayCast
+onready var mesh = $NormalBoy
 
-var acceleration = 30
-var steering = 30
-var turn_speed = 5
+## Movement
 
-var input_forward = 0
-var input_turn = 0
-
-func _ready():
-	print(cast)
-	cast.add_exception(physics)
+var gravity = Vector3(0, -40, 0)
+var speed = 1.7
+var velocity = Vector3(0,0,0)
+var rotationalspeed = deg2rad(180)
 
 func _physics_process(delta):
-	meshwithoutoffset.transform.origin = physics.transform.origin
-	physics.add_central_force(-meshwithoutoffset.global_transform.basis.z * input_forward)
+	velocity.x *= pow(.0001, delta)
+	velocity.z *= pow(.0001, delta)
+	velocity += gravity * delta
 	
-func _process(delta):
-	input_forward = 0
-	input_forward += Input.get_action_strength("forward")
-	input_forward -= Input.get_action_strength("backward")
-	input_forward *= acceleration
-	
-	input_turn = 0
-	input_turn += Input.get_action_strength("left")
-	input_turn -= Input.get_action_strength("right")
-	input_turn *= deg2rad(steering)
+	velocity += -transform.basis.z * speed * Input.get_action_strength("forward")
+	velocity -= -transform.basis.z * speed * Input.get_action_strength("backward")
 
-	var rotated = meshwithoutoffset.global_transform.basis.rotated(meshwithoutoffset.global_transform.basis.y, input_turn)
-	meshwithoutoffset.global_transform.basis = meshwithoutoffset.global_transform.basis.slerp(rotated, turn_speed * delta)
-	meshwithoutoffset.global_transform.basis = meshwithoutoffset.global_transform.basis.orthonormalized()
+	var rotate_strength = Input.get_action_strength("left") - Input.get_action_strength("right")
+	rotate_y(rotationalspeed * rotate_strength * delta)
 	
-	var n = cast.get_collision_normal()
-	var xform = align_with_y(meshwithoutoffset.global_transform, n.normalized())
-	meshwithoutoffset.global_transform = meshwithoutoffset.global_transform.interpolate_with(xform, 10 * delta)
+	var tilt = rotate_strength * velocity.length() / 25
+	mesh.rotation.z = lerp(mesh.rotation.z, tilt, 10*delta)
 
+	velocity = move_and_slide(velocity)
 	
+	var normal = cast.get_collision_normal()
+	var xform = align_with_y(mesh.global_transform, normal)
+	mesh.global_transform = mesh.global_transform.interpolate_with(xform, 0.05)
+
 func align_with_y(xform, new_y):
 	xform.basis.y = new_y
-	xform.basis.x = -xform.basis. z.cross(new_y)
+	xform.basis.x = -xform.basis.z.cross(new_y)
 	xform.basis = xform.basis.orthonormalized()
 	return xform
 
+## Items
 
+signal can_pick_up(item)
+signal cannot_pick_up(item)
+var item_to_pickup
+var held_item
+
+func _on_CollectionArea_area_entered(area):
+	if area is GameItem and !held_item:
+		can_pick_up(area)
+
+func _on_CollectionArea_area_exited(area):
+	if item_to_pickup == area:
+		cannot_pick_up(area)
+
+func _process(delta):
+	if Input.is_action_just_pressed("pickup"):
+		if item_to_pickup:
+			item_to_pickup.attach_to(self)
+			held_item = item_to_pickup
+			cannot_pick_up(item_to_pickup)
+		elif held_item:
+			can_pick_up(held_item)
+			held_item.drop()
+			held_item = null
+			
+		
+func can_pick_up(item):
+	emit_signal("can_pick_up", item)
+	item_to_pickup = item
+	
+func cannot_pick_up(item):
+	emit_signal("cannot_pick_up", item)
+	item_to_pickup = null

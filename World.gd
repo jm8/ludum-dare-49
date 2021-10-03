@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var droidbody = $Droid/RigidBody
+onready var droidbody = $Droid
 
 ## Expansion
 onready var expansion_area = $ExpansionArea
