@@ -24,6 +24,9 @@ func _process(_delta):
 		$PriceGrid.visible = true
 	if Input.is_action_just_pressed("close_price_menu"):
 		$PriceGrid.visible = false
+		
+	$"HUD/Top Bar/PowerMeter".value = Globals.power
+	$"HUD/Top Bar/PowerMeter".max_value = Globals.power_max
 
 func on_price_pinned(button_pressed: bool, product: String):
 	if button_pressed:
