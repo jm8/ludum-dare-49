@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Material_001.material" type="Material" id=1]
 [ext_resource path="res://Droid.gd" type="Script" id=2]
@@ -18,34 +18,24 @@ surfaces/0 = {
 "vertex_count": 2350
 }
 
-[sub_resource type="PhysicsMaterial" id=2]
-bounce = 0.1
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.197433, 0.2777, 0.468494 )
 
-[sub_resource type="SphereShape" id=3]
-radius = 0.5
-
-[node name="Droid" type="Spatial"]
+[node name="Droid" type="KinematicBody"]
 script = ExtResource( 2 )
 
-[node name="MeshWithoutOffset" type="Spatial" parent="."]
+[node name="NormalBoy" type="Spatial" parent="."]
 
-[node name="SmallBoy" type="Spatial" parent="MeshWithoutOffset"]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0834702, 0.0269929 )
-
-[node name="DroidMesh" type="MeshInstance" parent="MeshWithoutOffset/SmallBoy"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.042366, -0.619998, -0.581448 )
+[node name="SmallBoy" type="MeshInstance" parent="NormalBoy"]
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0.0314436, -0.404379, -0.248035 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="RayCast" type="RayCast" parent="MeshWithoutOffset/SmallBoy/DroidMesh"]
-transform = Transform( -8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -0.527462, 0.786938, -0.042366 )
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0356838, -0.0492312, -0.0309127 )
+shape = SubResource( 2 )
+
+[node name="RayCast" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.316986, 0 )
 enabled = true
-
-[node name="RigidBody" type="RigidBody" parent="."]
-physics_material_override = SubResource( 2 )
-gravity_scale = 5.0
-linear_damp = 2.0
-angular_damp = 5.0
-
-[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
-shape = SubResource( 3 )
+cast_to = Vector3( 0, -2, 0 )
