@@ -1,16 +1,23 @@
 extends Control
 
-export(String) var product_name
+var product_name: String
 
 onready var line_control_node = $VBoxContainer/MarginContainer/HBoxContainer/Control/LineControl
 
-func _process(delta):
+func _ready():
+	if PriceManager.items[product_name].sellable:
+		$VBoxContainer/HBoxContainer/MarginContainer/BuyButton.visible = false
+	else:
+		$VBoxContainer/HBoxContainer/MarginContainer/BuyButton.visible = true
+	
+
+
+func _process(_delta):
 	var margin = $VBoxContainer/MarginContainer/HBoxContainer/Control/LineContainer/Control.rect_size.y / 2.0
 	$VBoxContainer/MarginContainer/HBoxContainer/Control/LineControl.margin_bottom = -margin
 	$VBoxContainer/MarginContainer/HBoxContainer/Control/LineControl.margin_top = margin
 	
-	
-	
+
 	var values = PriceManager.items[product_name].prices
 	if values.size() <= 1:
 		return
@@ -49,5 +56,5 @@ func _process(delta):
 	line_control_node.add_child(line)
 	
 	var format_string = " %s - %3.2f€"
-	var actual_string = format_string % [String(product_name), values[values.size() - 1] / 100.0] 
-	$VBoxContainer/ProductName.text = actual_string
+	var actual_string = format_string % [String(product_name), PriceManager.items[product_name].price() / 100.0] 
+	$VBoxContainer/HBoxContainer/ProductName.text = actual_string

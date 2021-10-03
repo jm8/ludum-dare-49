@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://pixel.png" type="Texture" id=1]
+[ext_resource path="res://Main UI.gd" type="Script" id=2]
+[ext_resource path="res://resources/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://resources/oxygen.png" type="Texture" id=4]
+[ext_resource path="res://resources/power.png" type="Texture" id=5]
+[ext_resource path="res://PinnedPrices.gd" type="Script" id=6]
+[ext_resource path="res://MenuLabel.tscn" type="PackedScene" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="Main UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+input_pass_on_modal_close_click = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HUD" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top Bar" type="HBoxContainer" parent="HUD"]
+margin_right = 1004.0
+margin_bottom = 45.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PowerMeter" type="TextureProgress" parent="HUD/Top Bar"]
+margin_right = 426.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 300, 40 )
+size_flags_horizontal = 3
+value = 100.0
+texture_progress = ExtResource( 1 )
+tint_progress = Color( 0.968627, 1, 0.054902, 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/Top Bar/PowerMeter"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OxygenMeter" type="TextureProgress" parent="HUD/Top Bar"]
+margin_left = 430.0
+margin_right = 856.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 300, 40 )
+size_flags_horizontal = 3
+value = 100.0
+texture_progress = ExtResource( 1 )
+tint_progress = Color( 0.180392, 1, 0.980392, 1 )
+nine_patch_stretch = true
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/Top Bar/OxygenMeter"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_bottom = -4.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoneyLabel" type="Label" parent="HUD/Top Bar"]
+margin_left = 860.0
+margin_right = 1004.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 144, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "100€"
+align = 1
+valign = 1
+
+[node name="Spacer" type="Control" parent="HUD"]
+margin_top = 49.0
+margin_right = 1004.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="PinnedPrices" type="VBoxContainer" parent="HUD"]
+margin_left = 807.0
+margin_top = 78.0
+margin_right = 1004.0
+margin_bottom = 101.0
+size_flags_horizontal = 8
+script = ExtResource( 6 )
+
+[node name="MenuLabel" parent="HUD/PinnedPrices" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 197.0
+margin_bottom = 23.0
+text = "Press P to pin prices here!"
+
+[node name="PriceGrid" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 51.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
