@@ -8,7 +8,6 @@ func _process(delta):
 	if item != null:
 		rect_global_position = get_viewport().get_camera().unproject_position(item.global_transform.origin)
 		
-		
 
 func _on_Droid_can_pick_up(new_item):
 	item = new_item

@@ -10,7 +10,7 @@ albedo_texture = ExtResource( 1 )
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 2.1478, 1, 2.14904 )
 
-[node name="Spatial" type="Spatial"]
+[node name="SellItemPad" type="Spatial"]
 script = ExtResource( 3 )
 
 [node name="dropoff" type="MeshInstance" parent="."]
@@ -30,4 +30,11 @@ collision_mask = 4
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 shape = SubResource( 2 )
 
+[node name="DroidDetectionAreaForText" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="DroidDetectionAreaForText"]
+shape = SubResource( 2 )
+
 [connection signal="area_exited" from="StaticBody" to="." method="_on_StaticBody_area_exited"]
+[connection signal="body_entered" from="DroidDetectionAreaForText" to="." method="_on_DroidDetectionAreaForText_body_entered"]
+[connection signal="body_exited" from="DroidDetectionAreaForText" to="." method="_on_DroidDetectionAreaForText_body_exited"]
