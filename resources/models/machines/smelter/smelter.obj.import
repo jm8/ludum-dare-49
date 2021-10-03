@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/smelter.obj-3b4eeb4b60857a9f0210b41459fc4d17.mesh"
+
+[deps]
+
+files=[ "res://.import/smelter.obj-3b4eeb4b60857a9f0210b41459fc4d17.mesh" ]
+
+source_file="res://resources/models/machines/smelter/smelter.obj"
+dest_files=[ "res://.import/smelter.obj-3b4eeb4b60857a9f0210b41459fc4d17.mesh", "res://.import/smelter.obj-3b4eeb4b60857a9f0210b41459fc4d17.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
