@@ -2,19 +2,19 @@
 
 [ext_resource path="res://space-grid.glb" type="PackedScene" id=1]
 
-[sub_resource type="ConvexPolygonShape" id=1]
+[sub_resource type="ConvexPolygonShape" id=79]
 points = PoolVector3Array( 1, -1, -1, 1, -1, -1, 1, -1, -1, -1, -0.70446, -1, -1, -0.70446, -1, -1, -0.70446, -1, 1, -1, 1, 1, -1, 1, 1, -1, 1, 1, -0.70446, -1, 1, -0.70446, -1, 1, -0.70446, -1, -1, -0.70446, 1, -1, -0.70446, 1, -1, -0.70446, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -0.70446, 1, 1, -0.70446, 1, 1, -0.70446, 1 )
 
-[sub_resource type="ConvexPolygonShape" id=2]
+[sub_resource type="ConvexPolygonShape" id=126]
 points = PoolVector3Array( 1, 1, -1, 1, 1, -1, 1, 1, -1, -1, 1, -0.70446, -1, 1, -0.70446, -1, 1, -0.70446, 1, -1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -0.70446, 1, 1, -0.70446, 1, 1, -0.70446, -1, -1, -0.70446, -1, -1, -0.70446, -1, -1, -0.70446, -1, 1, -1, -1, 1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -0.70446, 1, -1, -0.70446, 1, -1, -0.70446, 1, 0.735412, -1, 1, 0.735412, -1, 1, 0.735412, -1, 1, 0.735412, -1, 1, -0.735412, -1, 1, -0.735412, -1, 1, -0.735412, -1, 1, -0.735412, -1, -1, 0.735412, -0.70446, -1, 0.735412, -0.70446, -1, -0.735412, -0.70446, -1, -0.735412, -0.70446, -1, -0.735412, -0.70446, 1, 0.735412, -0.70446, 1, 0.735412, -0.70446, 1, 0.735412, -0.70446, 1, 0.735412, -0.70446, 1, 0.735412, -0.70446, 1, 0.735412, -0.70446, 1, -0.735412, -0.70446, 1, -0.735412, -0.70446, 1, -0.735412, -0.70446, 1, -0.735412, -0.70446, 1, -0.735412, -0.70446, 1, -0.735412, -0.70446, -1, 0.735412, -1, -1, 0.735412, -1, -1, 0.735412, -1, -1, -0.735412, -1, -1, -0.735412, -1, -0.797063, -1, -1, -0.797063, -1, -1, -0.797063, -1, -1, -0.797063, 1, -0.70446, -0.797063, 1, -0.70446, -0.797063, 1, -0.70446, -0.797063, -1, -0.70446, -0.797063, -1, -0.70446, -0.797063, -1, -0.70446, -0.797063, -1, -0.70446, -0.797063, 1, -1, -0.797063, 1, -1, -0.797063, 1, -1, -0.797063, 1, -1, -0.797063, 0.735412, -0.70446, -0.797063, 0.735412, -0.70446, -0.797063, 0.735412, -0.70446, -0.797063, 0.735412, -0.70446, -0.797063, -0.735412, -0.70446, -0.797063, -0.735412, -0.70446, -0.797063, -0.735412, -0.70446, -0.797063, -0.735412, -0.70446, -0.797063, -0.735412, -0.70446, -0.797063, -0.735412, -0.70446, -0.797063, 0.735412, -1, -0.797063, 0.735412, -1, -0.797063, 0.735412, -1, -0.797063, 0.735412, -1, -0.797063, -0.735412, -1, -0.797063, -0.735412, -1, 1, 0.735412, -0.764037, 1, 0.735412, -0.764037, 1, -0.735412, -0.764037, 1, -0.735412, -0.764037, -0.797063, 0.735412, -0.764037, -0.797063, 0.735412, -0.764037, -0.797063, -0.735412, -0.764037, -0.797063, -0.735412, -0.764037 )
 
-[sub_resource type="ConvexPolygonShape" id=3]
+[sub_resource type="ConvexPolygonShape" id=86]
 points = PoolVector3Array( 1, -1, -1, 1, -1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1, -1, 1, -1, -0.70446, 1, -1, -0.70446, 1, -1, -0.70446, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -0.70446, 1, 1, -0.70446, 1, 1, -0.70446, 1, 1, 1, -1, 1, 1, -1, 1, 1, -1, -1, 1, -0.70446, -1, 1, -0.70446, -1, 1, -0.70446, 1, 1, -0.70446, 1, 1, -0.70446, 1, 1, -0.70446, -1, 1, -1, -1, 1, -1, -1, 1, -1, -1, -0.70446, 0.733658, -1, -0.70446, 0.733658, -1, -0.70446, 0.733658, 1, -0.70446, 0.733658, 1, -0.70446, 0.733658, 1, -0.70446, 0.733658, 1, 0.768798, -0.70446, 1, 0.768798, -0.70446, 1, 0.768798, -0.70446, -1, 0.768798, -0.70446, -1, 0.768798, -0.70446, -1, 0.768798, -0.70446 )
 
-[sub_resource type="ConcavePolygonShape" id=4]
+[sub_resource type="ConcavePolygonShape" id=90]
 data = PoolVector3Array( -1, -1, -0.7045, 1, -1, 1, 1, -1, -0.7045, -1, -1, -0.7045, -1, -1, 1, 1, -1, 1, -1, -1, -0.7045, -1, -0.7045, 1, -1, -1, 1, -1, -1, -0.7045, -1, -0.7045, -0.7045, -1, -0.7045, 1, -1, -1, -1, 1, -1, -0.7045, 1, -1, -1, -1, -1, -1, -1, -1, -0.7045, 1, -1, -0.7045, 1, -0.7045, -0.7045, 1, -1, 1, 1, -0.7045, 1, 1, -0.7045, -0.7045, 1, -1, -0.7045, 1, -1, 1, -1, -0.7045, -0.7045, -1, -1, -1, -1, -0.7045, -1, -1, -0.7045, -0.7045, -1, -1, -0.7045, -1, -1, -1, -1, -1, 1, 1, -0.7045, 1, 1, -1, 1, -1, -1, 1, -1, -0.7045, 1, 1, -0.7045, 1, -1, -0.7045, -0.7045, 1, -0.7045, 1, -1, -0.7045, 1, -1, -0.7045, -0.7045, 1, -0.7045, -0.7045, 1, -0.7045, 1, -1, 1, -1, 1, -0.7045, -1, 1, 1, -1, -1, 1, -1, -1, -0.7045, -1, 1, -0.7045, -1, -1, -0.7045, -0.7045, -1, 1, -1, -1, 1, -0.7045, -1, -0.7045, -0.7045, -1, -0.7045, -1, -1, 1, -1, 1, -0.7045, -1, 1, 1, -0.7045, 1, 1, -1, 1, -0.7045, -1, 1, -0.7045, -0.7045, 1, 1, -0.7045, 1, 1, -1, -1, 1, -0.7045, -1, 1, -1, 1, 1, -1, 1, 1, -0.7045, -1, 1, -0.7045, 1, -0.7045, -0.7045, -1, 1, -0.7045, 1, 1, -0.7045, 1, -0.7045, -0.7045, -1, -0.7045, -0.7045, -1, 1, -0.7045, 1, -0.7045, -1, 1, -1, -0.7045, 1, -0.7045, -0.7045, 1, -0.7045, -1, 1, -1, -1, 1, -1, -0.7045, -1, -0.7045, -1, 1, -1, -1, 1, -0.7045, -1, -1, -0.7045, -1, -1, -1, -1, 1, -1, -1 )
 
-[sub_resource type="ConvexPolygonShape" id=5]
+[sub_resource type="ConvexPolygonShape" id=109]
 points = PoolVector3Array( 1, -1, -1, 1, -1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1, -1, -1, 1, -1, -1, 1, 1, -0.70446, 1, 1, -0.70446, 1, 1, -0.70446, 1, 1, 1, -1, 1, 1, -1, 1, 1, -1, -1, 1, -0.70446, -1, 1, -0.70446, 1, 1, -0.70446, 1, 1, -0.70446, 1, 1, -0.70446, -1, 1, -1, -1, 1, -1, -1, 1, -1, 1, -0.70446, 0.733658, 1, -0.70446, 0.733658, 1, -0.70446, 0.733658, 1, 0.768798, -0.70446, 1, 0.768798, -0.70446, 1, 0.768798, -0.70446, -0.70446, 1, 1, -0.70446, 1, 1, -0.70446, 1, 1, -0.70446, 1, -1, -0.70446, 1, -1, -1, 1, 1, -1, 1, 1, -1, 1, 1, 0.733658, -0.70446, 1, 0.733658, -0.70446, 1, 0.733658, -0.70446, 1, -0.70446, 0.768798, 1, -0.70446, 0.768798, 1, -0.70446, 0.768798, 1, -0.956328, 1, -0.70446, -0.956328, 1, -0.70446, -0.70446, 1, -0.70446, -0.70446, 1, -0.70446, -0.70446, 1, -0.70446, -0.70446, 0.768798, -0.70446, -0.70446, 0.768798, -0.70446, -0.70446, 0.768798, -0.70446, -0.70446, 0.768798, -0.70446, 0.733658, -0.70446, 0.733658, 0.733658, -0.70446, 0.733658, 0.733658, -0.70446, 0.733658, -0.957261, 1, -0.710776 )
 
 [node name="space-grid" instance=ExtResource( 1 )]
@@ -22,109 +22,109 @@ points = PoolVector3Array( 1, -1, -1, 1, -1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 
 [node name="StaticBody" type="StaticBody" parent="Floor0" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor0/StaticBody" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 79 )
 
 [node name="StaticBody" type="StaticBody" parent="Floor1" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor1/StaticBody" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 79 )
 
 [node name="StaticBody" type="StaticBody" parent="Floor2" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor2/StaticBody" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 79 )
 
 [node name="StaticBody" type="StaticBody" parent="WallWindowH" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="WallWindowH/StaticBody" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 126 )
 
 [node name="StaticBody" type="StaticBody" parent="WallWindow" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="WallWindow/StaticBody" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 126 )
 
 [node name="StaticBody" type="StaticBody" parent="Wall1" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall1/StaticBody" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 126 )
 
 [node name="StaticBody" type="StaticBody" parent="Wall2" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall2/StaticBody" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 126 )
 
 [node name="StaticBody" type="StaticBody" parent="Wall3" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall3/StaticBody" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 126 )
 
 [node name="StaticBody" type="StaticBody" parent="WallPipeCap" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="WallPipeCap/StaticBody" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 126 )
 
 [node name="StaticBody" type="StaticBody" parent="WallPipe" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="WallPipe/StaticBody" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 126 )
 
 [node name="StaticBody" type="StaticBody" parent="AngledEdge0" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="AngledEdge0/StaticBody" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 86 )
 
 [node name="StaticBody2" type="StaticBody" parent="Edge0" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Edge0/StaticBody2" index="0"]
-shape = SubResource( 4 )
+shape = SubResource( 90 )
 
 [node name="StaticBody" type="StaticBody" parent="AngledEdge0001" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="AngledEdge0001/StaticBody" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 86 )
 
 [node name="StaticBody" type="StaticBody" parent="AngledEdge0002" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="AngledEdge0002/StaticBody" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 86 )
 
 [node name="StaticBody" type="StaticBody" parent="AngledEdge0003" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="AngledEdge0003/StaticBody" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 86 )
 
 [node name="StaticBody" type="StaticBody" parent="Floor3Cap" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor3Cap/StaticBody" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 79 )
 
 [node name="StaticBody" type="StaticBody" parent="Floor3" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor3/StaticBody" index="0"]
-shape = SubResource( 1 )
+shape = SubResource( 79 )
 
 [node name="StaticBody" type="StaticBody" parent="AngledEdge0004" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="AngledEdge0004/StaticBody" index="0"]
-shape = SubResource( 5 )
+shape = SubResource( 109 )
 
 [node name="StaticBody" type="StaticBody" parent="AngledEdge0005" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="AngledEdge0005/StaticBody" index="0"]
-shape = SubResource( 5 )
+shape = SubResource( 109 )
 
 [node name="StaticBody" type="StaticBody" parent="AngledEdge0006" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="AngledEdge0006/StaticBody" index="0"]
-shape = SubResource( 5 )
+shape = SubResource( 109 )
 
 [node name="StaticBody" type="StaticBody" parent="AngledEdge0007" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="AngledEdge0007/StaticBody" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 86 )
 
 [node name="StaticBody" type="StaticBody" parent="Wall0" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall0/StaticBody" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 126 )
