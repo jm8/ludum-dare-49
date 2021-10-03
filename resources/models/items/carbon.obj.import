@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/carbon.obj-aaa3f109900243265010e22c08453f5f.mesh"
+
+[deps]
+
+files=[ "res://.import/carbon.obj-aaa3f109900243265010e22c08453f5f.mesh" ]
+
+source_file="res://resources/models/items/carbon.obj"
+dest_files=[ "res://.import/carbon.obj-aaa3f109900243265010e22c08453f5f.mesh", "res://.import/carbon.obj-aaa3f109900243265010e22c08453f5f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
