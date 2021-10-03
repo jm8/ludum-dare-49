@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://resources/models/machines/mixer/paintcolor.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://resources/models/machines/mixer/light.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://resources/models/machines/mixer/mixer-animation.glb" type="PackedScene" id=3]
+[ext_resource path="res://resources/models/items/copper.tres" type="Material" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="light" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.095, -0.003, 0.004 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 1 )
+
+[node name="paintcolor" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0157273, -0.273113, 0.0108328 )
+material_override = ExtResource( 4 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="mixer-animation" parent="." instance=ExtResource( 3 )]

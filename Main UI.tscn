@@ -122,6 +122,7 @@ margin_bottom = 23.0
 text = "Press P to pin prices here!"
 
 [node name="PriceGrid" type="GridContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 51.0

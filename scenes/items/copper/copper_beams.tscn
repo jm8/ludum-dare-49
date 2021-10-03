@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://resources/models/items/copper.tres" type="Material" id=1]
+[ext_resource path="res://resources/models/items/beams.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.164906, 0.174272, 0.482903 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="beams" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06213, -0.0664696, 0.058665 )
+material_override = ExtResource( 1 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="RigidBody" type="RigidBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0262126, 0.0072923, 0 )
+shape = SubResource( 1 )

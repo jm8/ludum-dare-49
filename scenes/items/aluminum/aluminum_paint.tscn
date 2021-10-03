@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/models/items/aluminum.tres" type="Material" id=1]
+[ext_resource path="res://resources/models/items/paint_can.tres" type="Material" id=2]
+[ext_resource path="res://resources/models/items/paint.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.0931103, 0.12072, 0.0962247 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="paint" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994783, 0.00478423, -2.00145 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 1 )
+
+[node name="RigidBody" type="RigidBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00756645, 0.0373419, -0.00409551 )
+shape = SubResource( 1 )

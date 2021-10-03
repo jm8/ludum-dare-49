@@ -4,13 +4,6 @@
 
 [node name="MachineExample" type="Node"]
 script = ExtResource( 1 )
-inputs = {
-"Iron": 2.0
-}
-outputs = {
-"CO2": 0.01,
-"Steel": 1.0
-}
 capacity = {
 "CO2": 10.0,
 "Iron": 120.0,

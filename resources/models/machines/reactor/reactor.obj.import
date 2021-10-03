@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/reactor.obj-8a90e243a1a4b2ecc9790c628d72e66a.mesh"
+
+[deps]
+
+files=[ "res://.import/reactor.obj-8a90e243a1a4b2ecc9790c628d72e66a.mesh" ]
+
+source_file="res://resources/models/machines/reactor/reactor.obj"
+dest_files=[ "res://.import/reactor.obj-8a90e243a1a4b2ecc9790c628d72e66a.mesh", "res://.import/reactor.obj-8a90e243a1a4b2ecc9790c628d72e66a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
