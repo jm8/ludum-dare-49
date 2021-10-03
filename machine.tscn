@@ -5,7 +5,4 @@
 [node name="MachineExample" type="Node"]
 script = ExtResource( 1 )
 capacity = {
-"CO2": 10.0,
-"Iron": 120.0,
-"Steel": 120.0
 }
