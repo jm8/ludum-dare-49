@@ -825,8 +825,9 @@ void fragment() {
 	float dr = texture(DEPTH_TEXTURE, SCREEN_UV+vec2(px, 0.0)).x;
 	float dl = texture(DEPTH_TEXTURE, SCREEN_UV+vec2(-px, 0.0)).x;
 	
-	ALPHA = abs(abs(d)-abs(du))+abs(abs(d)-abs(dd))+abs(abs(d)-abs(dr))+abs(abs(d)-abs(dl));
-	ALPHA *= 1000.0;
+	float edginess = abs(abs(d-du)-abs(d-dd)) + abs(abs(d-dr)-abs(d-dl));
+
+	ALPHA = edginess/0.00001;
 }"
 
 [sub_resource type="ShaderMaterial" id=124]
