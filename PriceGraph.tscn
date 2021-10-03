@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://PriceGraph.gd" type="Script" id=1]
 [ext_resource path="res://resources/OpenSans-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://resources/pin.png" type="Texture" id=3]
+[ext_resource path="res://resources/button.png" type="Texture" id=4]
+[ext_resource path="res://resources/button_pressed.png" type="Texture" id=5]
+[ext_resource path="res://resources/button_hover.png" type="Texture" id=6]
+[ext_resource path="res://PinButton.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -11,6 +16,11 @@ use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 32
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
@@ -23,12 +33,13 @@ margin_left = 100.0
 margin_top = 100.0
 margin_right = -197.0
 margin_bottom = -122.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 color = Color( 0.0705882, 0.0745098, 0.164706, 0.784314 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-product_name = "Iron"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -37,14 +48,82 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ProductName" type="Label" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 727.0
 margin_bottom = 67.0
+
+[node name="ProductName" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_right = 529.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
 custom_fonts/font = SubResource( 1 )
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 533.0
+margin_right = 665.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="BuyButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 122.0
+margin_bottom = 57.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+expand = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/MarginContainer/BuyButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Buy"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 669.0
+margin_right = 709.0
+margin_bottom = 67.0
+
+[node name="PinButton" type="TextureButton" parent="VBoxContainer/HBoxContainer/CenterContainer"]
+margin_top = 13.0
+margin_right = 40.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 40, 40 )
+rect_pivot_offset = Vector2( 20, 20 )
+size_flags_horizontal = 10
+size_flags_vertical = 13
+toggle_mode = true
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+script = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 713.0
+margin_top = 26.0
+margin_right = 727.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 margin_top = 71.0
@@ -74,7 +153,7 @@ margin_bottom = 267.0
 margin_right = 40.0
 margin_bottom = 50.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "80.00"
 valign = 1
 
@@ -83,7 +162,7 @@ margin_top = 54.0
 margin_right = 40.0
 margin_bottom = 104.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "60.00"
 valign = 1
 
@@ -92,7 +171,7 @@ margin_top = 108.0
 margin_right = 40.0
 margin_bottom = 158.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "40.00"
 valign = 1
 
@@ -101,7 +180,7 @@ margin_top = 162.0
 margin_right = 40.0
 margin_bottom = 212.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "20.00"
 valign = 1
 
@@ -110,7 +189,7 @@ margin_top = 216.0
 margin_right = 40.0
 margin_bottom = 267.0
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "0.00"
 valign = 1
 

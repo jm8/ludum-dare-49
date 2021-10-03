@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/printer.wav-4c2c0ce56f78b6f991544598a094b434.sample"
+
+[deps]
+
+source_file="res://resources/printer.wav"
+dest_files=[ "res://.import/printer.wav-4c2c0ce56f78b6f991544598a094b434.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

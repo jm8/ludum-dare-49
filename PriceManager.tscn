@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://PriceManager.gd" type="Script" id=1]
+
+[node name="PriceManager" type="Node"]
+script = ExtResource( 1 )
+sale_goods = {
+"Iron": 1500.0,
+"Steel": 2500.0
+}
+purchase_goods = {
+"Carbon": 500,
+"Iron Ore": 1000.0
+}
