@@ -45,6 +45,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PriceManager="*res://PriceManager.tscn"
+Globals="*res://globals.gd"
 
 [gdnative]
 
@@ -95,6 +96,12 @@ pickup={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="player"
+3d_physics/layer_3="item"
 
 [physics]
 
