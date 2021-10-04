@@ -48,8 +48,17 @@ cast_to = Vector3( 0, -2, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="CollectionArea"]
 shape = SubResource( 3 )
 
+[node name="RepairArea" type="Area" parent="."]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape" type="CollisionShape" parent="RepairArea"]
+shape = SubResource( 3 )
+
 [node name="HoldPosition" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0146326, 0.149512, 0.110387 )
 
 [connection signal="area_entered" from="CollectionArea" to="." method="_on_CollectionArea_area_entered"]
 [connection signal="area_exited" from="CollectionArea" to="." method="_on_CollectionArea_area_exited"]
+[connection signal="body_entered" from="RepairArea" to="." method="_on_RepairArea_body_entered"]
+[connection signal="body_exited" from="RepairArea" to="." method="_on_RepairArea_body_exited"]

@@ -34,6 +34,9 @@ material/0 = SubResource( 1 )
 [node name="Machine" parent="." instance=ExtResource( 4 )]
 recipes = [ SubResource( 2 ) ]
 capacity = {
+"Carbon": 10.0,
+"Contaminated Water": 10.0,
+"Water": 10.0
 }
 
 [node name="OutputItemPad" parent="." instance=ExtResource( 5 )]

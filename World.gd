@@ -13,7 +13,7 @@ var corner_walls = []
 var angled_edges = []
 var corners = []
 
-var size = 2
+var size = 4
 
 func _ready():
 	get_block_names()
@@ -112,8 +112,10 @@ func remove_inner(r):
 			gridmap.set_cell_item(x,1,z,-1)
 
 func _on_ExpandButton_pressed():
-	size += 1
-	generate(size)
+	if Globals.money >= size * 10000:
+		Globals.money -= size * 10000
+		size += 1
+		generate(size)
 
 ## PLACING
 
@@ -171,7 +173,6 @@ func _on_BuildUI_buy_machine(machine_name, price, inprogresstype, realtype):
 
 func _process(delta):
 	Globals.power -= 3 * delta
-	print(Globals.power)
 	if Globals.power < 0:
 		print("you lose!")
 		self.get_tree().change_scene_to(load("res://Loss Screen.tscn"))

@@ -11,6 +11,10 @@ var speed = 1.7
 var velocity = Vector3(0,0,0)
 var rotationalspeed = deg2rad(180)
 
+var repairing: bool
+var repair_progress: float
+var repair_target: Node
+
 func _physics_process(delta):
 	velocity.x *= pow(.0001, delta)
 	velocity.z *= pow(.0001, delta)
@@ -47,7 +51,7 @@ func _on_CollectionArea_area_exited(area):
 	if item_to_pickup == area:
 		cannot_pick_up(area)
 
-func _process(_delta):
+func _process(delta):
 	if Input.is_action_just_pressed("pickup"):
 		if item_to_pickup:
 			if len(held_items) < max_held_items:
@@ -66,7 +70,13 @@ func _process(_delta):
 			can_pick_up(item)
 			item.drop()
 			held_items.pop_back()
-			
+	if repair_target != null && Input.is_action_pressed("repair"):
+		repair_progress += delta
+		if repair_progress > 2.0:
+			repair_target.broken = false
+			repair_target.timer = -10.0
+	else:
+		repair_progress = 0.0
 		
 func can_pick_up(item):
 	emit_signal("can_pick_up", item)
@@ -79,3 +89,11 @@ func too_full_to_pick_up(item):
 func cannot_pick_up(item):
 	emit_signal("cannot_pick_up", item)
 	item_to_pickup = null
+
+
+func _on_RepairArea_body_entered(body):
+	repair_target = body.get_parent().get_node("Machine")
+
+
+func _on_RepairArea_body_exited(body):
+	repair_target = null
