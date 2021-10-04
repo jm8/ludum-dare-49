@@ -64,7 +64,7 @@ outputs = {
 }
 power = -30.0
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial2" type="Spatial"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 script = ExtResource( 12 )
 
