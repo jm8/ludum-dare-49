@@ -46,7 +46,7 @@ __meta__ = {
 }
 
 [node name="PowerMeter" type="TextureProgress" parent="HUD/Top Bar"]
-margin_right = 426.0
+margin_right = 856.0
 margin_bottom = 45.0
 rect_min_size = Vector2( 300, 40 )
 size_flags_horizontal = 3
@@ -71,6 +71,7 @@ __meta__ = {
 }
 
 [node name="OxygenMeter" type="TextureProgress" parent="HUD/Top Bar"]
+visible = false
 margin_left = 430.0
 margin_right = 856.0
 margin_bottom = 45.0
@@ -82,6 +83,7 @@ tint_progress = Color( 0.180392, 1, 0.980392, 1 )
 nine_patch_stretch = true
 
 [node name="TextureRect2" type="TextureRect" parent="HUD/Top Bar/OxygenMeter"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -125,11 +127,24 @@ margin_right = 197.0
 margin_bottom = 23.0
 text = "Press P to pin prices here!"
 
-[node name="PriceGrid" type="GridContainer" parent="."]
-visible = false
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 51.0
+margin_top = 45.0
+margin_right = 1.0
+margin_bottom = 81.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PriceGrid" type="GridContainer" parent="ScrollContainer"]
+margin_right = 1005.0
+margin_bottom = 616.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 columns = 2
 __meta__ = {
 "_edit_use_anchors_": false

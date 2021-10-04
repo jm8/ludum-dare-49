@@ -13,7 +13,7 @@ func _process(_delta):
 			graph.product_name = product
 			graph.name = product
 			graph.get_node("VBoxContainer/HBoxContainer/CenterContainer/PinButton").connect("toggled", self, "on_price_pinned", [product])
-			$PriceGrid.add_child(graph)
+			$ScrollContainer/PriceGrid.add_child(graph)
 		
 	for child in $HUD/PinnedPrices.get_children():
 		if child.name == "MenuLabel":
@@ -21,9 +21,9 @@ func _process(_delta):
 		child.text = "%s - %2.2f€" % [child.name, PriceManager.items[child.name].price() / 100.0]
 	
 	if Input.is_action_just_pressed("open_price_menu"):
-		$PriceGrid.visible = true
+		$ScrollContainer/PriceGrid.visible = true
 	if Input.is_action_just_pressed("close_price_menu"):
-		$PriceGrid.visible = false
+		$ScrollContainer/PriceGrid.visible = false
 		
 	$"HUD/Top Bar/PowerMeter".value = Globals.power
 	$"HUD/Top Bar/PowerMeter".max_value = Globals.power_max

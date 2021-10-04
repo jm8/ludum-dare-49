@@ -1,4 +1,4 @@
 extends Spatial
 
-func _process(delta):
+func _process(_delta):
 	$OmniLight.visible = $Machine.is_active()
