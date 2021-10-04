@@ -9,3 +9,4 @@ func _on_SignalBus_machine_created(machine):
 	var label = MachineLabel.instance()
 	label.init(machine)
 	add_child(label)
+	
