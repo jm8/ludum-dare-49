@@ -151,7 +151,7 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("place") and creating.good:
 				var node = creating_type.instance()
 				add_child(node)
-				node.global_transform.origin = pos
+				node.global_transform = creating.global_transform
 				
 				creating.queue_free()
 				creating = null

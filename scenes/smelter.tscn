@@ -85,13 +85,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
 [node name="InputItemPad" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.32, -3.6, -5.468 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.462, 0.081, -1.569 )
 
 [node name="OutputItemPad" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.32, -3.6, -2.344 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.462, 0.081, 1.555 )
 
 [node name="chimney" type="CPUParticles" parent="."]
-transform = Transform( -0.0388237, 0, 0.999246, 0, 1, 0, -0.999246, 0, -0.0388237, -3.46149, -0.640675, -3.21265 )
+transform = Transform( -0.0388237, 0, 0.999246, 0, 1, 0, -0.999246, 0, -0.0388237, -0.679, 3.04, 0.686 )
 amount = 16
 mesh = SubResource( 6 )
 direction = Vector3( 0, 1, 0 )
@@ -103,6 +103,7 @@ scale_amount = 0.1
 scale_amount_curve = SubResource( 7 )
 
 [node name="particles" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.782, 3.681, 3.899 )
 
 [node name="Spatial" parent="particles" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.37216, -1.66011, -4.70694 )

@@ -25,5 +25,7 @@ func _process(delta):
 	if machine.broken:
 		$Label.set("custom_colors/font_color", Color.red)
 		$Label.text += "\nBroken"
-	
+	else:
+		$Label.set("custom_colors/font_color", Color.white)
+		$Label.text += "\n" + String(machine.contents)
 	

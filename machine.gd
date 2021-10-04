@@ -47,9 +47,9 @@ func _process(frame_delta):
 	timer += frame_delta
 	if timer > 0.5:
 		timer -= 0.5
-		if !broken && rand_range(0.0, 1.0) < 0.05:
-			print("Machine broken!")
-			broken = true
+		#if !broken && rand_range(0.0, 1.0) < 0.05:
+			#print("Machine broken!")
+			#broken = true
 	var particles = get_parent().get_node("particles")
 	if particles:
 		particles.visible = broken
