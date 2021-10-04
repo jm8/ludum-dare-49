@@ -5,11 +5,36 @@
 [node name="PriceManager" type="Node"]
 script = ExtResource( 1 )
 sale_goods = {
-"Aluminum Beams": 3000.0,
-"Iron": 1500.0,
-"Steel": 2500.0
+"Aluminum": 2300.0,
+"Aluminum Beams": 2700.0,
+"Aluminum Paint": 4200.0,
+"Aluminum Pipes": 2700.0,
+"Aluminum Sheets": 2700.0,
+"Circuits": 3800.0,
+"Copper": 1700.0,
+"Copper Beams": 2100.0,
+"Copper Paint": 4000.0,
+"Copper Pipes": 2100.0,
+"Copper Sheets": 2100.0,
+"Depleted Uranium": 300.0,
+"Iron": 1200.0,
+"Iron Beams": 1600.0,
+"Iron Pipes": 1600.0,
+"Iron Sheets": 1600.0,
+"Plastic": 1750.0,
+"Solar Panel": 6000.0,
+"Steel": 2400.0,
+"Steel Beams": 3000.0,
+"Steel Pipes": 3000.0,
+"Steel Sheets": 3000.0
 }
 purchase_goods = {
-"Carbon": 500,
-"Iron Ore": 1000.0
+"Aluminum Ore": 2000.0,
+"Carbon": 1000.0,
+"Copper Ore": 1500.0,
+"Glass": 1500.0,
+"Iron Ore": 1000.0,
+"Petroleum": 1500.0,
+"Uranium": 3000.0,
+"Water": 800.0
 }

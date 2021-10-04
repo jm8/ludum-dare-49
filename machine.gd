@@ -13,6 +13,26 @@ func _ready():
 func is_active():
 	return current_recipe != -1
 
+func has_input(item: String) -> bool:
+	for recipe in recipes:
+		if recipes.inputs.has(item):
+			return true
+	return false
+	
+func add_item(item: String) -> bool:
+	if !has_input(item):
+		return false
+	if capacity[item] - contents[item] >= 1.0:
+		contents[item] += 1.0
+		return true
+	return false
+
+func get_outputs() -> Array:
+	var arr = Array()
+	for recipe in recipes:
+		arr.append_array(recipe.outputs.keys())
+	return arr
+
 
 func _process(delta):
 	var max_recipe: int = -1

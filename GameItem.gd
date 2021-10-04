@@ -18,6 +18,6 @@ func drop():
 	collision_layer = 1
 	print(collision_layer)
 
-func _process(delta):
+func _process(_delta):
 	if held_by:
 		global_transform = held_by.get_node("HoldPosition").global_transform

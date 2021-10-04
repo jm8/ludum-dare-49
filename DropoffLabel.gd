@@ -6,7 +6,7 @@ var no_sell_format = "Nothing to sell"
 var current_pad = null
 var droid = null
 
-func _process(delta):
+func _process(_delta):
 	if current_pad != null:
 		rect_global_position = get_viewport().get_camera().unproject_position(current_pad.global_transform.origin)
 		if len(droid.held_items) == 0:

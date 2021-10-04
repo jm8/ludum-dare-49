@@ -57,7 +57,7 @@ func _on_CollectionArea_area_exited(area):
 	if item_to_pickup == area:
 		cannot_pick_up(area)
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("pickup"):
 		if item_to_pickup:
 			if len(held_items) < max_held_items:
