@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pcb.obj-6e7a0f5b3f1715a240f3251c9d6cab5f.mesh"
+
+[deps]
+
+files=[ "res://.import/pcb.obj-6e7a0f5b3f1715a240f3251c9d6cab5f.mesh" ]
+
+source_file="res://resources/models/items/pcb.obj"
+dest_files=[ "res://.import/pcb.obj-6e7a0f5b3f1715a240f3251c9d6cab5f.mesh", "res://.import/pcb.obj-6e7a0f5b3f1715a240f3251c9d6cab5f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

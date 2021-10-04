@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://items/GameItem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://resources/models/items/copper.tres" type="Material" id=2]
+[ext_resource path="res://resources/models/items/pcb.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0313726, 0.584314, 0, 1 )
+roughness = 0.9
+
+[node name="Circuit" instance=ExtResource( 1 )]
+item_name = "Circuit"
+
+[node name="Spatial" type="Spatial" parent="Mesh" index="0"]
+
+[node name="beams" type="MeshInstance" parent="Mesh/Spatial" index="0"]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -21.0231, -0.0641062, -0.00501577 )
+mesh = ExtResource( 3 )
+material/0 = SubResource( 1 )
+material/1 = ExtResource( 2 )

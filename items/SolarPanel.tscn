@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://items/GameItem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://resources/models/items/solarpanel.png" type="Texture" id=2]
+[ext_resource path="res://resources/models/items/solarpanel.obj" type="ArrayMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+
+[node name="Solar Panel" instance=ExtResource( 1 )]
+item_name = "Solar Panel"
+
+[node name="Spatial" type="Spatial" parent="Mesh" index="0"]
+
+[node name="beams" type="MeshInstance" parent="Mesh/Spatial" index="0"]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -15.0477, -0.0641062, -0.00501577 )
+mesh = ExtResource( 3 )
+material/0 = SubResource( 1 )

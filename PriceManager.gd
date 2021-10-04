@@ -85,3 +85,7 @@ func _enter_tree():
 
 	for product in purchase_goods:
 		items[product] = Item.new(purchase_goods[product], false)
+		
+	for item in items:
+		for i in range(20):
+			items[item].next_price()

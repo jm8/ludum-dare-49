@@ -5,6 +5,9 @@ export(float) var speed = 0.2
 
 var current_recipe: int = -1
 var contents: Dictionary
+var timer = 0.0
+var broken: bool
+
 export(Dictionary) var capacity
 
 func _ready():
@@ -12,7 +15,7 @@ func _ready():
 		contents[item] = 0.0
 
 func is_active():
-	return current_recipe != -1
+	return (!broken) && current_recipe != -1
 
 func has_input(item: String) -> bool:
 	for recipe in recipes:
@@ -36,6 +39,18 @@ func get_outputs() -> Array:
 
 
 func _process(frame_delta):
+	timer += frame_delta
+	if timer > 0.5:
+		timer -= 0.5
+		if !broken && rand_range(0.0, 1.0) < 0.05:
+			print("Machine broken!")
+			broken = true
+	if !broken:
+		get_parent().get_node("particles").visible = false
+	if broken:
+		get_parent().get_node("particles").visible = true
+		return
+
 	var delta = frame_delta * speed
 	var max_recipe: int = -1
 	var max_delta: float = 0

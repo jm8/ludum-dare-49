@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://resources/models/machines/mixer-animation.glb" type="PackedScene" id=1]
+[ext_resource path="res://resources/models/machines/mixer/mixer-animation.glb" type="PackedScene" id=1]
 
 [node name="mixer-animation" instance=ExtResource( 1 )]
 
