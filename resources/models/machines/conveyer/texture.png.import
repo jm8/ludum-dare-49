@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/texture.png-1798702b9d37ec1c37a0e9b9fbcd8d85.stex"
+path="res://.import/texture.png-f5c912b7b3ccba9cd22dde5151649f2a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/models/machines/plasticery/texture.png"
-dest_files=[ "res://.import/texture.png-1798702b9d37ec1c37a0e9b9fbcd8d85.stex" ]
+source_file="res://resources/models/machines/conveyer/texture.png"
+dest_files=[ "res://.import/texture.png-f5c912b7b3ccba9cd22dde5151649f2a.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=true
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

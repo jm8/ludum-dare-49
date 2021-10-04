@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/texture.png-1798702b9d37ec1c37a0e9b9fbcd8d85.stex"
+path="res://.import/frame1.png-d2a7bfff7de13415c0dbede85a0fa2ea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/models/machines/plasticery/texture.png"
-dest_files=[ "res://.import/texture.png-1798702b9d37ec1c37a0e9b9fbcd8d85.stex" ]
+source_file="res://resources/models/machines/conveyer/frame1.png"
+dest_files=[ "res://.import/frame1.png-d2a7bfff7de13415c0dbede85a0fa2ea.stex" ]
 
 [params]
 
