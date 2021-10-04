@@ -29,10 +29,13 @@ func has_input(item: String) -> bool:
 	return false
 	
 func add_item(item: String) -> bool:
+	print("add item")
 	if !has_input(item):
 		return false
 	if capacity[item] - contents[item] >= 1.0:
+		print(contents[item])
 		contents[item] += 1.0
+		print(contents[item])
 		return true
 	return false
 
@@ -47,8 +50,9 @@ func _process(frame_delta):
 	timer += frame_delta
 	if timer > 0.5:
 		timer -= 0.5
-		if !broken && rand_range(0.0, 1.0) < 0.05:
+		if !broken && rand_range(0.0, 1.0) < 0.03:
 			broken = true
+			$alarm.play()
 	var particles = get_parent().get_node("particles")
 	if particles:
 		particles.visible = broken
