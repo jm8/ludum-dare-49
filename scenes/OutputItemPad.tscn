@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/models/machines/item_pad/dropoff.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://resources/models/machines/item_pad/frame1.png" type="Texture" id=2]
 [ext_resource path="res://scenes/OutputItemPad.gd" type="Script" id=3]
+[ext_resource path="res://resources/sound_effects/machine_manufactures_something.wav" type="AudioStream" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
@@ -21,3 +22,7 @@ omni_range = 4.0
 
 [node name="Spawn Point" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925961, 0 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+unit_size = 4.0
