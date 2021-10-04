@@ -127,6 +127,11 @@ func _physics_process(delta):
 			creating_type = null
 			Globals.money += machine_restore_price
 	if creating:
+		if Input.is_action_just_pressed("rotate_building_left"):
+			creating.rotate_y(PI/2)
+		if Input.is_action_just_pressed("rotate_building_right"):
+			creating.rotate_y(-PI/2)
+		
 		var space_state = get_world().direct_space_state
 		var mouse_position = get_viewport().get_mouse_position()
 		
