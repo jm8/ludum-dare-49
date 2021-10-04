@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://items/DepletedUranium.tscn" type="PackedScene" id=1]
+[ext_resource path="res://screenshot.gd" type="Script" id=2]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+background_color = Color( 1, 0, 0, 1 )
+background_energy = 0.0
+ambient_light_color = Color( 0, 0, 0, 0 )
+ambient_light_energy = 0.0
+ambient_light_sky_contribution = 0.0
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Uranium" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.951487, 0.307689, 0, -0.307689, 0.951487, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.874175, -0.318193, 0.366839, 0.00923104, 0.76617, 0.642572, -0.485523, -0.558334, 0.672704, 0.243106, 0.482959, 0.323154 )
+environment = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.234817, -0.557396, 0.796348, -0.118889, 0.829573, 0.545595, -0.964742, 0.0334379, -0.261066, 0, 0, 0 )

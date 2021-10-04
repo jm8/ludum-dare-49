@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://resources/models/machines/smelter/smelter.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://resources/models/machines/smelter/texture.png" type="Texture" id=2]
@@ -47,6 +47,11 @@ power = 1.5
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 1.03239, 1, 1.02571 )
 
+[sub_resource type="CubeMesh" id=6]
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.996503, 0.445455 ), 0.0, 0.0, 0, 0 ]
+
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83394, 3.1938, 3.77876 )
 script = ExtResource( 5 )
@@ -84,3 +89,15 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.32, -3.6, -5.468 )
 
 [node name="OutputItemPad" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.32, -3.6, -2.344 )
+
+[node name="chimney" type="CPUParticles" parent="."]
+transform = Transform( -0.0388237, 0, 0.999246, 0, 1, 0, -0.999246, 0, -0.0388237, -3.46149, -0.640675, -3.21265 )
+amount = 16
+mesh = SubResource( 6 )
+direction = Vector3( 0, 1, 0 )
+spread = 120.0
+gravity = Vector3( 0, 4.927, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.25
+scale_amount = 0.1
+scale_amount_curve = SubResource( 7 )
