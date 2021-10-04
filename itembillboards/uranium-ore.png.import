@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/uranium-ore.png-daafaa5babeb88f5d131e8c8d0d67051.image"
+
+[deps]
+
+source_file="res://itembillboards/uranium-ore.png"
+dest_files=[ "res://.import/uranium-ore.png-daafaa5babeb88f5d131e8c8d0d67051.image" ]
+
+[params]
+

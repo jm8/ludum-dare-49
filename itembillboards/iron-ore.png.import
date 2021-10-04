@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/iron-ore.png-8e81d070c9ceeb01725356b29b52f1ba.image"
+
+[deps]
+
+source_file="res://itembillboards/iron-ore.png"
+dest_files=[ "res://.import/iron-ore.png-8e81d070c9ceeb01725356b29b52f1ba.image" ]
+
+[params]
+

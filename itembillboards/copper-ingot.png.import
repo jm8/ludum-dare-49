@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/copper-ingot.png-feaa85a8d4cf9df563b39aa552d1a52d.image"
+
+[deps]
+
+source_file="res://itembillboards/copper-ingot.png"
+dest_files=[ "res://.import/copper-ingot.png-feaa85a8d4cf9df563b39aa552d1a52d.image" ]
+
+[params]
+

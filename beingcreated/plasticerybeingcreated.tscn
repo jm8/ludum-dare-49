@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://beingcreated/hologram_shader.tres" type="Material" id=1]
 [ext_resource path="res://resources/models/machines/plasticery/plastic.obj" type="ArrayMesh" id=2]
@@ -6,7 +6,14 @@
 [ext_resource path="res://beingcreated/NodeBeingCreated.tscn" type="PackedScene" id=4]
 [ext_resource path="res://resources/models/machines/item_pad/dropoff.obj" type="ArrayMesh" id=5]
 
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 2.77618, 5.66304 )
+
 [node name="NodeBeingCreated" instance=ExtResource( 4 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19984, -1.29984 )
+shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="1"]
 mesh = ExtResource( 2 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://items/plastic.tres" type="Material" id=1]
 [ext_resource path="res://resources/models/machines/plasticery/texture.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Recipe.gd" type="Script" id=6]
 [ext_resource path="res://scenes/InputItemPad.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/OutputItemPad.tscn" type="PackedScene" id=8]
+[ext_resource path="res://itembillboards/PetroleumTankBillboard.tscn" type="PackedScene" id=9]
+[ext_resource path="res://itembillboards/PlasticBillboard.tscn" type="PackedScene" id=10]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
@@ -34,7 +36,7 @@ material/0 = null
 mesh = ExtResource( 4 )
 material/0 = SubResource( 1 )
 
-[node name="MachineExample" parent="." instance=ExtResource( 5 )]
+[node name="Machine" parent="." instance=ExtResource( 5 )]
 recipes = [ SubResource( 2 ) ]
 machine_name = "Plasticery"
 capacity = {
@@ -45,5 +47,9 @@ capacity = {
 [node name="InputItemPad" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -5.36556 )
 
+[node name="PetroleumTankBillboard" parent="InputItemPad" instance=ExtResource( 9 )]
+
 [node name="OutputItemPad" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 2.985 )
+
+[node name="PlasticBillboard" parent="OutputItemPad" instance=ExtResource( 10 )]

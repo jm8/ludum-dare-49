@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/iron-ingots.png-e54eeb2190b813526df2d2982bdf67ed.image"
+
+[deps]
+
+source_file="res://itembillboards/iron-ingots.png"
+dest_files=[ "res://.import/iron-ingots.png-e54eeb2190b813526df2d2982bdf67ed.image" ]
+
+[params]
+
