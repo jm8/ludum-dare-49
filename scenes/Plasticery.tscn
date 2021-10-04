@@ -34,7 +34,7 @@ material/0 = null
 mesh = ExtResource( 4 )
 material/0 = SubResource( 1 )
 
-[node name="MachineExample" parent="." instance=ExtResource( 5 )]
+[node name="Machine" parent="." instance=ExtResource( 5 )]
 recipes = [ SubResource( 2 ) ]
 machine_name = "Plasticery"
 capacity = {
