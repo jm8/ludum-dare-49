@@ -34,5 +34,6 @@ func _process(delta):
 		$Label.text += "\nBroken"
 	else:
 		$Label.set("custom_colors/font_color", Color.white)
-		for item in machine.contents:
-			bars[item].value = 100 * machine.contents[item] / machine.capacity[item]
+		
+	for item in machine.contents:
+		bars[item].value = 100 * machine.contents[item] / machine.capacity[item]

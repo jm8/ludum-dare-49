@@ -21,6 +21,7 @@ func _ready():
 	add_line("Printery", 42000, preload("res://beingcreated/printerybeingcreated.tscn"), preload("res://Printery.tscn"))
 	add_line("Sheetery", 42000, preload("res://beingcreated/sheeterybeingcreated.tscn"), preload("res://Sheetery.tscn"))
 	add_line("Mixery", 42000, preload("res://beingcreated/mixerbeingcreated.tscn"), preload("res://scenes/mixer.tscn"))
+	add_line("Panelery", 42000, preload("res://panelerybeingcreated.tscn"), preload("res://Panelery.tscn"))
 	
 func add_line(machine_name, price, inprogresstype, realtype):
 	var x = preload("res://MachineBuyLine.tscn").instance()

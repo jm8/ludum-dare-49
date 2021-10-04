@@ -4,6 +4,7 @@ var sell_format = "Sell %s for €%.2f"
 var no_sell_format = "Nothing to sell"
 
 var input_format = "Add %s to %s"
+var bad_input_format = "Can't add %s to %s"
 var no_input_format = "Nothing to add"
 
 var current_pad = null
@@ -26,7 +27,7 @@ func _process(_delta):
 			else:
 				text = no_input_format
 		else:
-			set("custom_colors/font_color", Color.white)
+			
 			if current_pad is SellItemPad:
 				var item = droid.held_items[len(droid.held_items)-1]
 				var price = PriceManager.items[item.item_name].price() / 100.0
@@ -34,10 +35,12 @@ func _process(_delta):
 			else:
 				var item = droid.held_items[len(droid.held_items)-1]
 				var machine = current_pad.get_parent().get_node("Machine")
-				if machine == null:
-					text = input_format % [item.item_name, "machine"]
-				else:
+				if machine.has_input(item.item_name):
+					set("custom_colors/font_color", Color.white)
 					text = input_format % [item.item_name, machine.machine_name]
+				else:
+					set("custom_colors/font_color", Color.red)
+					text = bad_input_format % [item.item_name, machine.machine_name]
 
 func _on_SignalBus_droid_can_drop(droid, dropoff):
 	print("Yo signal!")
