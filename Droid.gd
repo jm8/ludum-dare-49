@@ -73,7 +73,7 @@ func _process(delta):
 			held_items.pop_back()
 	if repair_target != null && Input.is_action_pressed("repair"):
 		repair_progress += delta
-		if repair_progress > 2.0:
+		if repair_progress > 0.01:
 			repair_target.broken = false
 			repair_target.timer = -10.0
 	else:

@@ -6,7 +6,7 @@ export(float) var speed = 0.2
 
 var current_recipe: int = -1
 var contents: Dictionary
-var timer = 0.0
+var timer = -10.0
 var broken: bool
 
 export(Dictionary) var capacity
@@ -47,18 +47,25 @@ func get_outputs() -> Array:
 
 
 func _process(frame_delta):
-	timer += frame_delta
-	if timer > 0.5:
-		timer -= 0.5
-		if !broken && rand_range(0.0, 1.0) < 0.03:
-			broken = true
-			$alarm.play()
+	if is_active():
+		timer += frame_delta
+		if timer > 0.5:
+			timer -= 0.5
+			if !broken && rand_range(0.0, 1.0) < 0.03:
+				broken = true
+				$alarm.play()
+				$machine_breaks.play()
+
 	var particles = get_parent().get_node("particles")
 	if particles:
 		particles.visible = broken
-
 	if broken:
 		return
+		
+	if rand_range(0.0, 1.0) < 0.0005:
+		$chirp.play()
+	if rand_range(0.0, 1.0) < 0.0005:
+		$hum.play()
 
 	var delta = frame_delta * speed
 	var max_recipe: int = -1

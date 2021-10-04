@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://machine.gd" type="Script" id=1]
 [ext_resource path="res://resources/sound_effects/alarm.wav" type="AudioStream" id=2]
+[ext_resource path="res://resources/sound_effects/machine_breaks.wav" type="AudioStream" id=3]
+[ext_resource path="res://resources/sound_effects/machine_hum.wav" type="AudioStream" id=4]
+[ext_resource path="res://resources/sound_effects/machine_chirp.wav" type="AudioStream" id=5]
 
 [node name="MachineExample" type="Node"]
 script = ExtResource( 1 )
@@ -10,3 +13,16 @@ capacity = {
 
 [node name="alarm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+
+[node name="machine_breaks" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="chirp" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
+unit_db = -1.0
+unit_size = 3.0
+
+[node name="hum" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+unit_db = -1.0
+unit_size = 3.0

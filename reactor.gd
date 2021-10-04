@@ -1,10 +1,4 @@
 extends Spatial
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$Machine.contents["Uranium"] = 8
-	$Machine.contents["Water"] = 8
 	
 var texture_time = 0.0
 

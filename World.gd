@@ -18,6 +18,8 @@ var size = 4
 func _ready():
 	get_block_names()
 	generate(size)
+	$reactor/Machine.contents["Uranium"] = 10
+	$reactor/Machine.contents["Water"] = 10
 	
 func get_block_names():
 	for id in gridmap.mesh_library.get_item_list():
