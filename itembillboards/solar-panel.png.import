@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/solar-panel.png-8fbf3f3ec294d92a6474013d631ac6c6.image"
+
+[deps]
+
+source_file="res://itembillboards/solar-panel.png"
+dest_files=[ "res://.import/solar-panel.png-8fbf3f3ec294d92a6474013d631ac6c6.image" ]
+
+[params]
+

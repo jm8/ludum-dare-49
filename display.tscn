@@ -14,7 +14,6 @@ ambient_light_sky_contribution = 0.0
 [node name="Spatial" type="Spatial"]
 
 [node name="Uranium" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.951487, 0.307689, 0, -0.307689, 0.951487, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.874175, -0.318193, 0.366839, 0.00923104, 0.76617, 0.642572, -0.485523, -0.558334, 0.672704, 0.243106, 0.482959, 0.323154 )
