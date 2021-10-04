@@ -47,15 +47,13 @@ func get_outputs() -> Array:
 
 
 func _process(frame_delta):
-	if is_active():
-		timer += frame_delta
-		if timer > 0.5:
-			timer -= 0.5
-			if !broken && rand_range(0.0, 1.0) < 0.03:
-				broken = true
-				$alarm.play()
-				$machine_breaks.play()
-
+	timer += frame_delta
+	if timer > 0.5:
+		timer -= 0.5
+		if !broken && rand_range(0.0, 1.0) < 0.01:
+			broken = true
+			$alarm.play()
+			$machine_breaks.play()
 	var particles = get_parent().get_node("particles")
 	if particles:
 		particles.visible = broken

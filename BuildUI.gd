@@ -12,16 +12,16 @@ func _process(delta):
 		visible = false
 
 func _ready():
-	add_line("Smelter", 42000, preload("res://beingcreated/smelterbeingcreated.tscn"), preload("res://scenes/smelter.tscn"))
-	add_line("Reactor", 42000, preload("res://beingcreated/reactorbeingcreated.tscn"), preload("res://reactor.tscn"))	
-	add_line("Plasticery", 42000, preload("res://beingcreated/plasticerybeingcreated.tscn"), preload("res://scenes/Plasticery.tscn"))
-	add_line("Watery", 42000, preload("res://beingcreated/waterybeingcreated.tscn"), preload("res://scenes/Watery.tscn"))
-	add_line("Beamery", 42000, preload("res://beingcreated/beamerybeingcreated.tscn"), preload("res://Beamery.tscn"))
-	add_line("Pipery", 42000, preload("res://beingcreated/piperybeingcreated.tscn"), preload("res://Pipery.tscn"))	
-	add_line("Printery", 42000, preload("res://beingcreated/printerybeingcreated.tscn"), preload("res://Printery.tscn"))
-	add_line("Sheetery", 42000, preload("res://beingcreated/sheeterybeingcreated.tscn"), preload("res://Sheetery.tscn"))
-	add_line("Mixery", 42000, preload("res://beingcreated/mixerbeingcreated.tscn"), preload("res://scenes/mixer.tscn"))
-	add_line("Panelery", 42000, preload("res://panelerybeingcreated.tscn"), preload("res://Panelery.tscn"))
+	add_line("Smelter",    20000, preload("res://beingcreated/smelterbeingcreated.tscn"), preload("res://scenes/smelter.tscn"))
+	add_line("Reactor",    40000, preload("res://beingcreated/reactorbeingcreated.tscn"), preload("res://reactor.tscn"))	
+	add_line("Plasticery", 20000, preload("res://beingcreated/plasticerybeingcreated.tscn"), preload("res://scenes/Plasticery.tscn"))
+	add_line("Watery",     15000, preload("res://beingcreated/waterybeingcreated.tscn"), preload("res://scenes/Watery.tscn"))
+	add_line("Beamery",    15000, preload("res://beingcreated/beamerybeingcreated.tscn"), preload("res://Beamery.tscn"))
+	add_line("Pipery",     15000, preload("res://beingcreated/piperybeingcreated.tscn"), preload("res://Pipery.tscn"))	
+	add_line("Printery",   25000, preload("res://beingcreated/printerybeingcreated.tscn"), preload("res://Printery.tscn"))
+	add_line("Sheetery",   15000, preload("res://beingcreated/sheeterybeingcreated.tscn"), preload("res://Sheetery.tscn"))
+	add_line("Mixery",     15000, preload("res://beingcreated/mixerbeingcreated.tscn"), preload("res://scenes/mixer.tscn"))
+	add_line("Panelery",   25000, preload("res://panelerybeingcreated.tscn"), preload("res://Panelery.tscn"))
 	
 func add_line(machine_name, price, inprogresstype, realtype):
 	var x = preload("res://MachineBuyLine.tscn").instance()
