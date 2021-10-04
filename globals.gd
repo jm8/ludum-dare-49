@@ -32,7 +32,9 @@ onready var scenes = {
 	"Copper": preload("res://items/CopperIngot.tscn"),
 	"Iron": preload("res://items/IronIngot.tscn"),
 	"Steel": preload("res://items/SteelIngot.tscn"),
-	"Glass": preload("res://items/Glass.tscn")
+	"Glass": preload("res://items/Glass.tscn"),
+	"Circuit": preload("res://items/Circuit.tscn"),
+	"Solar Panel": preload("res://items/SolarPanel.tscn"),
 }
 
 
