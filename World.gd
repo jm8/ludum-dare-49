@@ -168,3 +168,12 @@ func _on_BuildUI_buy_machine(machine_name, price, inprogresstype, realtype):
 	add_child(creating)
 	creating_type = realtype
 	machine_restore_price = price
+
+func _process(delta):
+	Globals.power -= 3 * delta
+	print(Globals.power)
+	if Globals.power < 0:
+		print("you lose!")
+		self.get_tree().change_scene_to(load("res://Loss Screen.tscn"))
+	if Globals.money > 100 * 10000:
+		self.get_tree().change_scene_to(load("res://Win Screen.tscn"))

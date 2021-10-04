@@ -25,7 +25,7 @@ outputs = {
 }
 power = 0.2
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial2" type="Spatial"]
 
 [node name="watery" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
@@ -33,7 +33,6 @@ material/0 = SubResource( 1 )
 
 [node name="Machine" parent="." instance=ExtResource( 4 )]
 recipes = [ SubResource( 2 ) ]
-machine_name = "Watery"
 capacity = {
 }
 
