@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://resources/models/machines/watery/watery.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://resources/models/machines/watery/texture.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://machine.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/OutputItemPad.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/InputItemPad.tscn" type="PackedScene" id=6]
+[ext_resource path="res://itembillboards/WaterBarrelBillboard.tscn" type="PackedScene" id=7]
+[ext_resource path="res://itembillboards/ContaminatedWaterBarrelBillboard.tscn" type="PackedScene" id=8]
+[ext_resource path="res://itembillboards/Carbon.tscn" type="PackedScene" id=9]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
@@ -22,7 +25,7 @@ outputs = {
 }
 power = 0.2
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial2" type="Spatial"]
 
 [node name="watery" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
@@ -30,12 +33,19 @@ material/0 = SubResource( 1 )
 
 [node name="Machine" parent="." instance=ExtResource( 4 )]
 recipes = [ SubResource( 2 ) ]
-machine_name = "Watery"
 capacity = {
 }
 
 [node name="OutputItemPad" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.941, -0.13, 3.0185 )
 
+[node name="WaterBarrelBillboard" parent="OutputItemPad" instance=ExtResource( 7 )]
+
 [node name="InputItemPad" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.22564, -0.12964, 3.02251 )
+
+[node name="ContaminatedWaterBarrelBillboard" parent="InputItemPad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3736, 0, 0 )
+
+[node name="CarbonBillboard" parent="InputItemPad" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.778904, 0, 0 )

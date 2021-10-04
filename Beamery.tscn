@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://resources/models/machines/conveyer/conveyor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://machine.tscn" type="PackedScene" id=2]
@@ -6,6 +6,14 @@
 [ext_resource path="res://scenes/OutputItemPad.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/InputItemPad.tscn" type="PackedScene" id=5]
 [ext_resource path="res://spark.tscn" type="PackedScene" id=6]
+[ext_resource path="res://itembillboards/AluminumBeamsBillboard.tscn" type="PackedScene" id=7]
+[ext_resource path="res://itembillboards/CopperBeamsBillboard.tscn" type="PackedScene" id=8]
+[ext_resource path="res://itembillboards/IronBeamsBillboard.tscn" type="PackedScene" id=9]
+[ext_resource path="res://itembillboards/SteelBeamsBillboard.tscn" type="PackedScene" id=10]
+[ext_resource path="res://itembillboards/CopperIngotsBillboard.tscn" type="PackedScene" id=11]
+[ext_resource path="res://itembillboards/AluminumIngotsBillboard.tscn" type="PackedScene" id=12]
+[ext_resource path="res://itembillboards/SteelIngotBillboard.tscn" type="PackedScene" id=13]
+[ext_resource path="res://itembillboards/IronIngotsBillboard.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
@@ -51,13 +59,12 @@ outputs = {
 }
 power = 1.0
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial3" type="Spatial"]
 
 [node name="Spatial" parent="." instance=ExtResource( 1 )]
 
 [node name="Machine" parent="." instance=ExtResource( 2 )]
 recipes = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
-machine_name = "Beamery"
 capacity = {
 "Aluminum": 10.0,
 "Aluminum Beams": 10.0,
@@ -72,8 +79,32 @@ capacity = {
 [node name="OutputItemPad" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3.343, 0.065, 0 )
 
+[node name="AluminumBeamsBillboard" parent="OutputItemPad" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.21305 )
+
+[node name="CopperBeamsBillboard" parent="OutputItemPad" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.42594 )
+
+[node name="IronBeamsBillboard" parent="OutputItemPad" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.52177 )
+
+[node name="SteelBeamsBillboard" parent="OutputItemPad" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.67052 )
+
 [node name="InputItemPad" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.29791, 0.065, 0 )
+
+[node name="AluminumIngotsBillboard" parent="InputItemPad" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.21305 )
+
+[node name="CopperIngotsBillboard" parent="InputItemPad" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.42594 )
+
+[node name="IronIngotsBillboard" parent="InputItemPad" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.52177 )
+
+[node name="SteelIngotBillboard" parent="InputItemPad" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.67052 )
 
 [node name="particles" type="Spatial" parent="."]
 visible = false

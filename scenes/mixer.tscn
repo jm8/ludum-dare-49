@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://resources/models/machines/mixer/paintcolor.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://resources/models/machines/mixer/light.obj" type="ArrayMesh" id=2]
@@ -10,6 +10,11 @@
 [ext_resource path="res://scenes/InputItemPad.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/OutputItemPad.tscn" type="PackedScene" id=9]
 [ext_resource path="res://spark.tscn" type="PackedScene" id=10]
+[ext_resource path="res://itembillboards/CopperIngotsBillboard.tscn" type="PackedScene" id=11]
+[ext_resource path="res://itembillboards/AluminumIngotsBillboard.tscn" type="PackedScene" id=12]
+[ext_resource path="res://itembillboards/PlasticBillboard.tscn" type="PackedScene" id=13]
+[ext_resource path="res://itembillboards/CopperPaintBillboard.tscn" type="PackedScene" id=14]
+[ext_resource path="res://itembillboards/AluminumPaintBillboard.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 1, 0, 0, 1 )
@@ -191,8 +196,26 @@ shape = SubResource( 9 )
 [node name="InputItemPad" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.11309, 0, 3.0858 )
 
+[node name="CopperIngotsBillboard" parent="InputItemPad" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88009, 0, 1.52094 )
+
+[node name="PlasticBillboard" parent="InputItemPad" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150376, 0, 1.79334 )
+
+[node name="AluminumIngotsBillboard" parent="InputItemPad" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.81742, 0, -1.78004 )
+
+[node name="PlasticBillboard2" parent="InputItemPad" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14297, 0, -2.19392 )
+
 [node name="OutputItemPad" parent="." instance=ExtResource( 9 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.051, 0, 3.085 )
+
+[node name="CopperPaintBillboard" parent="OutputItemPad" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54184, 0, 1.43331 )
+
+[node name="AluminumPaintBillboard" parent="OutputItemPad" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58212, 0, -1.84003 )
 
 [node name="Machine" parent="." instance=ExtResource( 6 )]
 recipes = [ SubResource( 10 ), SubResource( 11 ) ]
