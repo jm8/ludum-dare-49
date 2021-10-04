@@ -2,6 +2,7 @@
 extends Spatial
 
 onready var droidbody = $Droid
+onready var camera = $Camera
 
 ## Generation
 onready var gridmap = $GridMap
@@ -17,6 +18,10 @@ var size = 2
 func _ready():
 	get_block_names()
 	generate(size)
+	
+	creating = preload("res://beingcreated/reactorbeingcreated.tscn").instance()
+	add_child(creating)
+	creating_type = preload("res://reactor.tscn")
 	
 func get_block_names():
 	for id in gridmap.mesh_library.get_item_list():
@@ -113,3 +118,30 @@ func remove_inner(r):
 func _on_ExpandButton_pressed():
 	size += 1
 	generate(size)
+
+## PLACING
+
+var creating = null
+var creating_type = null
+
+func _physics_process(delta):
+	if creating:
+		var space_state = get_world().direct_space_state
+		var mouse_position = get_viewport().get_mouse_position()
+		
+		var ray_origin = camera.project_ray_origin(mouse_position)
+		var ray_end = ray_origin + camera.project_ray_normal(mouse_position) * 2000
+		var intersection = space_state.intersect_ray(ray_origin, ray_end)
+	
+		if not intersection.empty():
+			var pos = intersection.position
+			creating.global_transform.origin = pos
+			creating.good = creating.get_node("Area").get_overlapping_bodies().empty()
+			if Input.is_action_just_pressed("place"):
+				var node = creating_type.instance()
+				add_child(node)
+				print(pos)
+				node.global_transform.origin = pos
+				
+				creating.queue_free()
+				creating = null
