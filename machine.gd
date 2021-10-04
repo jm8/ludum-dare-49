@@ -45,8 +45,12 @@ func _process(frame_delta):
 		if !broken && rand_range(0.0, 1.0) < 0.05:
 			print("Machine broken!")
 			broken = true
+	if !broken:
+		get_parent().get_node("particles").visible = false
 	if broken:
+		get_parent().get_node("particles").visible = true
 		return
+
 	var delta = frame_delta * speed
 	var max_recipe: int = -1
 	var max_delta: float = 0

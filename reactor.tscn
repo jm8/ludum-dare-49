@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://resources/models/machines/reactor/frame7.png" type="Texture" id=1]
 [ext_resource path="res://resources/models/machines/reactor/frame1.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://reactor.gd" type="Script" id=12]
 [ext_resource path="res://scenes/InputItemPad.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/OutputItemPad.tscn" type="PackedScene" id=14]
+[ext_resource path="res://spark.tscn" type="PackedScene" id=15]
 
 [sub_resource type="AnimatedTexture" id=1]
 flags = 18
@@ -134,3 +135,27 @@ capacity = {
 "Uranium": 20.0,
 "Water": 20.0
 }
+
+[node name="particles" type="Spatial" parent="."]
+visible = false
+
+[node name="Spatial" parent="particles" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07143, 2.73761, 1.83063 )
+
+[node name="Spatial4" parent="particles" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61248, 2.73761, 1.07322 )
+
+[node name="Spatial7" parent="particles" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.363279, 3.94018, -0.123954 )
+
+[node name="Spatial5" parent="particles" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0526373, 2.73761, -1.85907 )
+
+[node name="Spatial6" parent="particles" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.776046, 3.89575, 0.957946 )
+
+[node name="Spatial2" parent="particles" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349898, 1.56936, 2.35099 )
+
+[node name="Spatial3" parent="particles" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.367213, 1.56936, 1.97101 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://resources/models/machines/smelter/smelter.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://resources/models/machines/smelter/texture.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/smelter.gd" type="Script" id=5]
 [ext_resource path="res://scenes/InputItemPad.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/OutputItemPad.tscn" type="PackedScene" id=7]
+[ext_resource path="res://spark.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
@@ -101,3 +102,14 @@ initial_velocity = 1.0
 initial_velocity_random = 0.25
 scale_amount = 0.1
 scale_amount_curve = SubResource( 7 )
+
+[node name="particles" type="Spatial" parent="."]
+
+[node name="Spatial" parent="particles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.37216, -1.66011, -4.70694 )
+
+[node name="Spatial2" parent="particles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9567, -1.79091, -3.07363 )
+
+[node name="Spatial3" parent="particles" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9567, -2.75945, -2.6949 )

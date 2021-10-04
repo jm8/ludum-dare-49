@@ -22,6 +22,7 @@ _data = [ Vector2( 0.00349651, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.996503, 0.218182 
 
 [node name="CPUParticles" type="CPUParticles" parent="."]
 transform = Transform( 0.108069, 0, 0.994143, 0, 1, 0, -0.994143, 0, 0.108069, 0, 0, 0 )
+amount = 12
 mesh = SubResource( 2 )
 direction = Vector3( 0, 1, 0 )
 spread = 10.0
