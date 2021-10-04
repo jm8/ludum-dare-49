@@ -53,6 +53,7 @@ func _process(_delta):
 			if len(held_items) < max_held_items:
 				item_to_pickup.attach_to(self)
 				held_items.push_back(item_to_pickup)
+				SignalBus.emit_signal("held_items_changed", held_items)
 				cannot_pick_up(item_to_pickup)
 				
 				for area in $CollectionArea.get_overlapping_areas():
@@ -66,6 +67,7 @@ func _process(_delta):
 			can_pick_up(item)
 			item.drop()
 			held_items.pop_back()
+			SignalBus.emit_signal("held_items_changed", held_items)
 			
 		
 func can_pick_up(item):

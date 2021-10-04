@@ -6,7 +6,6 @@ export(Dictionary) var sale_goods
 # the goods that can be bought and their base prices
 export(Dictionary) var purchase_goods
 
-
 class Item:
 	var prices: PoolIntArray
 	var trend: float

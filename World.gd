@@ -13,7 +13,7 @@ var corner_walls = []
 var angled_edges = []
 var corners = []
 
-var size = 2
+var size = 4
 
 func _ready():
 	get_block_names()
