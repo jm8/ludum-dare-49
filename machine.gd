@@ -1,6 +1,7 @@
 extends Node
 
 export(Array) var recipes
+export(float) var speed = 0.2
 
 var current_recipe: int = -1
 var contents: Dictionary
@@ -15,7 +16,7 @@ func is_active():
 
 func has_input(item: String) -> bool:
 	for recipe in recipes:
-		if recipes.inputs.has(item):
+		if recipe.inputs.has(item):
 			return true
 	return false
 	
@@ -34,7 +35,8 @@ func get_outputs() -> Array:
 	return arr
 
 
-func _process(delta):
+func _process(frame_delta):
+	var delta = frame_delta * speed
 	var max_recipe: int = -1
 	var max_delta: float = 0
 	for i in range(recipes.size()):

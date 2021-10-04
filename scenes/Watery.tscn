@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://resources/models/machines/watery/watery.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://resources/models/machines/watery/texture.png" type="Texture" id=2]
+[ext_resource path="res://Recipe.gd" type="Script" id=3]
+[ext_resource path="res://machine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/OutputItemPad.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/InputItemPad.tscn" type="PackedScene" id=6]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 3 )
+recipe_name = "purify"
+inputs = {
+"Carbon": 0.1,
+"Contaminated Water": 1.0
+}
+outputs = {
+"Water": 0.9
+}
+power = 0.5
+
+[node name="Spatial" type="Spatial"]
+
+[node name="watery" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="Machine" parent="." instance=ExtResource( 4 )]
+recipes = [ SubResource( 2 ) ]
+capacity = {
+}
+
+[node name="OutputItemPad" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.941, -0.13, 3.0185 )
+
+[node name="InputItemPad" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.22564, -0.12964, 3.02251 )

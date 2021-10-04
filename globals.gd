@@ -2,7 +2,7 @@ extends Node
 
 var power: float = 1000
 var power_max = 2000
-var money = 0
+var money = 100000
 onready var scenes = {
 	"Aluminum Beams": preload("res://items/AluminumBeams.tscn"),
 	"Aluminum Ore": preload("res://items/AluminumOre.tscn"),
@@ -22,9 +22,17 @@ onready var scenes = {
 	"Steel Pipes": preload("res://items/SteelPipes.tscn"),
 	"Steel Sheets": preload("res://items/SteelSheets.tscn"),
 	"Water": preload("res://items/WaterBarrel.tscn"),
-	"Pertroleum": preload("res://items/PetroleumTank.tscn"),
+	"Contaminated Water": preload("res://items/ContaminatedWaterBarrel.tscn"),
+	"Petroleum": preload("res://items/PetroleumTank.tscn"),
 	"Carbon": preload("res://items/Carbon.tscn"),
 	"Plastic": preload("res://items/Plastic.tscn"),
+	"Uranium": preload("res://items/Uranium.tscn"),
+	"Depleted Uranium": preload("res://items/DepletedUranium.tscn"),
+	"Aluminum": preload("res://items/AluminumIngot.tscn"),
+	"Copper": preload("res://items/CopperIngot.tscn"),
+	"Iron": preload("res://items/IronIngot.tscn"),
+	"Steel": preload("res://items/SteelIngot.tscn"),
+	"Glass": preload("res://items/Glass.tscn")
 }
 
 

@@ -1,0 +1,48 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://items/plastic.tres" type="Material" id=1]
+[ext_resource path="res://resources/models/machines/plasticery/texture.png" type="Texture" id=2]
+[ext_resource path="res://resources/models/machines/plasticery/plastic.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://resources/models/machines/plasticery/plasticery.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://machine.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Recipe.gd" type="Script" id=6]
+[ext_resource path="res://scenes/InputItemPad.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/OutputItemPad.tscn" type="PackedScene" id=8]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 6 )
+recipe_name = "plastic"
+inputs = {
+"Petroleum": 1.0
+}
+outputs = {
+"Plastic": 1.0
+}
+power = 1.0
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+material_override = ExtResource( 1 )
+mesh = ExtResource( 3 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+mesh = ExtResource( 4 )
+material/0 = SubResource( 1 )
+
+[node name="MachineExample" parent="." instance=ExtResource( 5 )]
+recipes = [ SubResource( 2 ) ]
+capacity = {
+"Petroleum": 10.0,
+"Plastic": 10.0
+}
+
+[node name="InputItemPad" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -5.36556 )
+
+[node name="OutputItemPad" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 2.985 )

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://items/GameItem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://resources/models/items/aluminum.tres" type="Material" id=2]
+[ext_resource path="res://resources/models/items/ingots.obj" type="ArrayMesh" id=3]
+
+[node name="AluminumIngot" instance=ExtResource( 1 )]
+item_name = "Aluminum"
+
+[node name="Spatial" type="Spatial" parent="Mesh" index="0"]
+
+[node name="beams" type="MeshInstance" parent="Mesh/Spatial" index="0"]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -18.2148, -0.0664696, -0.00286929 )
+material_override = ExtResource( 2 )
+mesh = ExtResource( 3 )
+material/0 = null
+material/1 = null
+material/2 = null

@@ -21,9 +21,9 @@ func _process(_delta):
 		child.text = "%s - %2.2f€" % [child.name, PriceManager.items[child.name].price() / 100.0]
 	
 	if Input.is_action_just_pressed("open_price_menu"):
-		$ScrollContainer/PriceGrid.visible = true
+		$ScrollContainer.visible = true
 	if Input.is_action_just_pressed("close_price_menu"):
-		$ScrollContainer/PriceGrid.visible = false
+		$ScrollContainer.visible = false
 		
 	$"HUD/Top Bar/PowerMeter".value = Globals.power
 	$"HUD/Top Bar/PowerMeter".max_value = Globals.power_max

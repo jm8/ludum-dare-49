@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://items/GameItem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://resources/models/items/glass.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0, 0, 0, 1 )
+roughness = 0.8
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.909804, 1, 0.929412, 1 )
+roughness = 0.0
+
+[node name="Glass" instance=ExtResource( 1 )]
+item_name = "Glass"
+
+[node name="Spatial" type="Spatial" parent="Mesh" index="0"]
+
+[node name="beams" type="MeshInstance" parent="Mesh/Spatial" index="0"]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -12.0263, -0.0641062, -0.00501577 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )

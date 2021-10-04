@@ -6,10 +6,11 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_StaticBody_area_exited(area):
-	if get_parent().get_node("Machine").add_item(area.item_name):
-		area.queue_free()
-	else:
-		print("Invalid item put on plate")
+	if area.collision_layer == 1:
+		if get_parent().get_node("Machine").add_item(area.item_name):
+			area.queue_free()
+		else:
+			print("Invalid item put on plate")
 
 
 ## Droid detection (for text)

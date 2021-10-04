@@ -20,4 +20,4 @@ light_color = Color( 1, 0, 0, 1 )
 omni_range = 4.0
 
 [node name="Spawn Point" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.633095, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925961, 0 )
