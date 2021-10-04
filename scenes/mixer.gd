@@ -5,9 +5,7 @@ onready var aluminum_texture = preload("res://resources/models/items/aluminum.tr
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Machine.contents["Plastic"] = 20
-	$Machine.contents["Aluminum"] = 10
-	$Machine.contents["Copper"] = 10
+	pass
 
 func _process(_delta):
 	if $Machine.is_active():

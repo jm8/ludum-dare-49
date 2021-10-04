@@ -58,6 +58,14 @@ power = 1.0
 [node name="Machine" parent="." instance=ExtResource( 2 )]
 recipes = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
 capacity = {
+"Aluminum": 10.0,
+"Aluminum Sheets": 10.0,
+"Copper": 10.0,
+"Copper Sheets": 10.0,
+"Iron": 10.0,
+"Iron Sheets": 10.0,
+"Steel": 10.0,
+"Steel Sheets": 10.0
 }
 
 [node name="OutputItemPad" parent="." instance=ExtResource( 4 )]

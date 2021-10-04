@@ -20,7 +20,7 @@ inputs = {
 outputs = {
 "Water": 0.9
 }
-power = 0.5
+power = 0.2
 
 [node name="Spatial" type="Spatial"]
 
