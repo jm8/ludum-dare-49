@@ -8,45 +8,45 @@
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
-recipe_name = "Iron Pipe"
+recipe_name = "Iron Sheet"
 inputs = {
 "Iron": 1.0
 }
 outputs = {
-"Iron Pipes": 1.0
+"Iron Sheets": 1.0
 }
 power = 1.0
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 3 )
-recipe_name = "copper pipe"
+recipe_name = "copper sheet"
 inputs = {
 "Copper": 1.0
 }
 outputs = {
-"Copper Pipes": 1.0
+"Copper Sheets": 1
 }
 power = 1.0
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 3 )
-recipe_name = "aluminum pipe"
+recipe_name = "aluminum sheet"
 inputs = {
 "Aluminum": 1.0
 }
 outputs = {
-"Aluminum Pipes": 1.0
+"Aluminum Sheets": 1
 }
 power = 1.0
 
 [sub_resource type="Resource" id=4]
 script = ExtResource( 3 )
-recipe_name = "steel pipe"
+recipe_name = "steel sheets"
 inputs = {
 "Steel": 1.0
 }
 outputs = {
-"Steel Pipes": 1.0
+"Steel Sheets": 1.0
 }
 power = 1.0
 

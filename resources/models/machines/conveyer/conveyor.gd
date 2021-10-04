@@ -1,16 +1,9 @@
 extends Spatial
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if get_parent().get_node("Machine").is_active():
+		$conveyer.get_active_material(0).albedo_texture.current_frame = 0
+		$OmniLight.light_color = Color.green
+	else:
+		$conveyer.get_active_material(0).albedo_texture.current_frame = 1
+		$OmniLight.light_color = Color.red
