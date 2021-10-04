@@ -1,6 +1,7 @@
 extends Node
 
 export(Array) var recipes
+export(String) var machine_name
 export(float) var speed = 0.2
 
 var current_recipe: int = -1
@@ -11,8 +12,12 @@ var broken: bool
 export(Dictionary) var capacity
 
 func _ready():
+	SignalBus.emit_signal("machine_created", self)
 	for item in capacity:
 		contents[item] = 0.0
+		
+func _exit_tree():
+	SignalBus.emit_signal("machine_destroyed", self)
 
 func is_active():
 	return (!broken) && current_recipe != -1

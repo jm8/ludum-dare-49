@@ -68,6 +68,7 @@ shadow_enabled = true
 
 [node name="Machine" parent="." instance=ExtResource( 3 )]
 recipes = [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
+machine_name = "Smelter"
 capacity = {
 "Aluminum": 120.0,
 "Aluminum Ore": 120.0,
@@ -111,3 +112,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9567, -1.79091, -3.07363 )
 
 [node name="Spatial3" parent="particles" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9567, -2.75945, -2.6949 )
+
+[node name="LabelPosition" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4036, 0 )
