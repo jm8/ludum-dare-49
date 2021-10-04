@@ -53,7 +53,7 @@ extents = Vector3( 1.03239, 1, 1.02571 )
 [sub_resource type="Curve" id=7]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.996503, 0.445455 ), 0.0, 0.0, 0, 0 ]
 
-[node name="Spatial" type="Spatial"]
+[node name="Spatial2" type="Spatial"]
 script = ExtResource( 5 )
 
 [node name="smelter" type="MeshInstance" parent="."]
@@ -68,7 +68,6 @@ shadow_enabled = true
 
 [node name="Machine" parent="." instance=ExtResource( 3 )]
 recipes = [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
-machine_name = "Smelter"
 capacity = {
 "Aluminum": 120.0,
 "Aluminum Ore": 120.0,

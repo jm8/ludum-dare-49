@@ -1,6 +1,6 @@
 extends Node
 
-var power: float = 1000
+var power: float = 180
 var power_max = 2000
 var money = 100000
 onready var scenes = {
@@ -36,8 +36,7 @@ onready var scenes = {
 	"Circuit": preload("res://items/Circuit.tscn"),
 	"Solar Panel": preload("res://items/SolarPanel.tscn"),
 }
-
-
+	
 
 func add_power(amount: float):
 	power = min(power_max, power + amount)
