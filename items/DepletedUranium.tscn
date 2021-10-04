@@ -4,7 +4,7 @@
 [ext_resource path="res://resources/models/items/ore.obj" type="ArrayMesh" id=2]
 
 [node name="Uranium" instance=ExtResource( 1 )]
-item_name = "Water Barrel"
+item_name = "Depleted Uranium"
 
 [node name="Spatial" type="Spatial" parent="Mesh" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00650668, 0, 0.0241217 )

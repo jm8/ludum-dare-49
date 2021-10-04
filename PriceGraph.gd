@@ -58,3 +58,9 @@ func _process(_delta):
 	var format_string = " %s - %3.2f€"
 	var actual_string = format_string % [String(product_name), PriceManager.items[product_name].price() / 100.0] 
 	$VBoxContainer/HBoxContainer/ProductName.text = actual_string
+
+func _on_BuyButton_button_up():
+	if Globals.money > PriceManager.items[product_name].price():
+		Globals.money -= PriceManager.items[product_name].price()
+	
+	get_tree().current_scene.get_node("BoughtItemPad").add_item(product_name)

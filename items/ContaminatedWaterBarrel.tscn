@@ -4,7 +4,7 @@
 [ext_resource path="res://resources/models/items/contaminatedwaterbarrel.png" type="Texture" id=2]
 [ext_resource path="res://resources/models/items/tank.obj" type="ArrayMesh" id=3]
 
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
 
 [sub_resource type="CylinderShape" id=2]
@@ -12,7 +12,7 @@ radius = 0.24533
 height = 0.582128
 
 [node name="WaterBarrel" instance=ExtResource( 1 )]
-item_name = "Water Barrel"
+item_name = "Contaminated Water"
 
 [node name="Spatial" type="Spatial" parent="Mesh" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00650668, 0, 0.0241217 )
@@ -20,7 +20,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00650668, 0, 0.0241217 )
 [node name="tank" type="MeshInstance" parent="Mesh/Spatial" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99031, 0.0364184, -2.02214 )
 mesh = ExtResource( 3 )
-material/0 = SubResource( 3 )
+material/0 = SubResource( 1 )
 
 [node name="RigidBody" type="RigidBody" parent="Mesh/Spatial" index="1"]
 

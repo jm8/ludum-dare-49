@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ingots.obj-0efcfc7f94ba43da9352029c417053a7.mesh"
+
+[deps]
+
+files=[ "res://.import/ingots.obj-0efcfc7f94ba43da9352029c417053a7.mesh" ]
+
+source_file="res://resources/models/items/ingots.obj"
+dest_files=[ "res://.import/ingots.obj-0efcfc7f94ba43da9352029c417053a7.mesh", "res://.import/ingots.obj-0efcfc7f94ba43da9352029c417053a7.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/plasticery.obj-f767c17a0d9860e87507dd0789273f13.mesh"
+
+[deps]
+
+files=[ "res://.import/plasticery.obj-f767c17a0d9860e87507dd0789273f13.mesh" ]
+
+source_file="res://resources/models/machines/plasticery/plasticery.obj"
+dest_files=[ "res://.import/plasticery.obj-f767c17a0d9860e87507dd0789273f13.mesh", "res://.import/plasticery.obj-f767c17a0d9860e87507dd0789273f13.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

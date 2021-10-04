@@ -6,5 +6,5 @@ func _process(_delta):
 		if get_parent().get_node("Machine").contents[item] > 1.0:
 			get_parent().get_node("Machine").contents[item] -= 1.0
 			var object = Globals.scenes[item].instance()
-			object.global_translate($"Spawn Point".to_global($"Spawn Point".translation))
 			get_tree().current_scene.add_child(object)
+			object.global_transform.origin = $"Spawn Point".global_transform.origin

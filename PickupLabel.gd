@@ -4,7 +4,7 @@ var item
 var format = "%s (press E)"
 var too_full_format = "can't pick up %s (too full)"
 
-func _process(delta):
+func _process(_delta):
 	if item != null:
 		rect_global_position = get_viewport().get_camera().unproject_position(item.global_transform.origin)
 		

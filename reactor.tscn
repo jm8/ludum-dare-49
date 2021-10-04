@@ -39,14 +39,14 @@ frame_7/delay_sec = 0.0
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = SubResource( 1 )
 
-[sub_resource type="CylinderShape" id=4]
+[sub_resource type="CylinderShape" id=6]
 radius = 2.06044
 height = 3.36848
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.426202, 0.432962, 0.456245 )
 
-[sub_resource type="Resource" id=3]
+[sub_resource type="Resource" id=5]
 script = ExtResource( 11 )
 recipe_name = "power"
 inputs = {
@@ -57,7 +57,7 @@ outputs = {
 "Contaminated Water": 1.0,
 "Depleted Uranium": 0.95
 }
-power = -10.0
+power = -30.0
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
@@ -114,20 +114,21 @@ omni_range = 1.83108
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77395, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0055856, 0.48464, 2.15201 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="InputItemPad" parent="." instance=ExtResource( 13 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.976134, 0, 2.50868 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.976, 0.2, 2.509 )
 
 [node name="OutputItemPad" parent="." instance=ExtResource( 14 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.03157, 0, 2.52775 )
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.032, 0.2, 2.528 )
 
 [node name="Machine" parent="." instance=ExtResource( 10 )]
-recipes = [ SubResource( 3 ) ]
+recipes = [ SubResource( 5 ) ]
+speed = 0.0
 capacity = {
 "Contaminated Water": 120.0,
 "Depleted Uranium": 114.0,
