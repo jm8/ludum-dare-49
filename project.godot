@@ -24,11 +24,6 @@ _global_script_classes=[ {
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
 }, {
-"base": "Node",
-"class": "Machines",
-"language": "GDScript",
-"path": "res://Machines.gd"
-}, {
 "base": "Resource",
 "class": "Recipe",
 "language": "GDScript",
@@ -38,7 +33,6 @@ _global_script_class_icons={
 "Droid": "",
 "GameItem": "",
 "GitAPI": "",
-"Machines": "",
 "Recipe": ""
 }
 

@@ -12,8 +12,14 @@ func _process(delta):
 		visible = false
 
 func _ready():
-	add_line("Smelter", 1200, preload("res://beingcreated/smelterbeingcreated.tscn"), preload("res://scenes/smelter.tscn"))
-	add_line("Reactor", 49999, preload("res://beingcreated/reactorbeingcreated.tscn"), preload("res://reactor.tscn"))	
+	add_line("Smelter", 42000, preload("res://beingcreated/smelterbeingcreated.tscn"), preload("res://scenes/smelter.tscn"))
+	add_line("Reactor", 42000, preload("res://beingcreated/reactorbeingcreated.tscn"), preload("res://reactor.tscn"))	
+	#add_line("Plasticery", 42000, preload("res://beingcreated/plasticerybeingcreated.tscn"), preload("res://scenes/Plasticery.tscn"))
+	#add_line("Watery", 42000, preload("res://beingcreated/waterybeingcreated.tscn"), preload("res://scenes/Watery.tscn"))
+	add_line("Beamery", 42000, preload("res://beingcreated/beamerybeingcreated.tscn"), preload("res://Beamery.tscn"))
+	add_line("Pipery", 42000, preload("res://beingcreated/piperybeingcreated.tscn"), preload("res://Pipery.tscn"))	
+	add_line("Printery", 42000, preload("res://beingcreated/printerybeingcreated.tscn"), preload("res://Printery.tscn"))
+	add_line("Sheetery", 42000, preload("res://beingcreated/sheeterybeingcreated.tscn"), preload("res://Sheetery.tscn"))
 	
 func add_line(machine_name, price, inprogresstype, realtype):
 	var x = preload("res://MachineBuyLine.tscn").instance()

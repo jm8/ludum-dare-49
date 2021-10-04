@@ -11,4 +11,5 @@ func set_good(new):
 	good = new
 	for child in get_children():
 		if child is MeshInstance:
-			child.get_surface_material(0).set_shader_param("good", new)
+			for i in range(child.get_surface_material_count()):
+				child.get_surface_material(i).set_shader_param("good", new)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/models/machines/watery/watery.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://beingcreated/NodeBeingCreated.tscn" type="PackedScene" id=2]
+[ext_resource path="res://beingcreated/hologram_shader.tres" type="Material" id=3]
+[ext_resource path="res://resources/models/machines/item_pad/dropoff.obj" type="ArrayMesh" id=4]
+
+[node name="NodeBeingCreated" instance=ExtResource( 2 )]
+
+[node name="watery" type="MeshInstance" parent="." index="1"]
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 3 )
+
+[node name="dropoff2" type="MeshInstance" parent="." index="2"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.941, -0.13, 3.0185 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 3 )
+
+[node name="dropoff3" type="MeshInstance" parent="." index="3"]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.22564, -0.12964, 3.02251 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 3 )
