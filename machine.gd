@@ -50,7 +50,7 @@ func _process(frame_delta):
 	timer += frame_delta
 	if timer > 0.5:
 		timer -= 0.5
-		if !broken && rand_range(0.0, 1.0) < 0.03:
+		if !broken && rand_range(0.0, 1.0) < 0.01:
 			broken = true
 			$alarm.play()
 	var particles = get_parent().get_node("particles")
