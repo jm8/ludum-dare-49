@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://resources/models/machines/smelter/smelter.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://resources/models/machines/smelter/texture.png" type="Texture" id=2]
@@ -8,6 +8,12 @@
 [ext_resource path="res://scenes/InputItemPad.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/OutputItemPad.tscn" type="PackedScene" id=7]
 [ext_resource path="res://spark.tscn" type="PackedScene" id=8]
+[ext_resource path="res://itembillboards/IronOreBillboard.tscn" type="PackedScene" id=9]
+[ext_resource path="res://itembillboards/AluminumOreBillboard.tscn" type="PackedScene" id=10]
+[ext_resource path="res://itembillboards/CopperOreBillboard.tscn" type="PackedScene" id=11]
+[ext_resource path="res://itembillboards/AluminumIngotsBillboard.tscn" type="PackedScene" id=12]
+[ext_resource path="res://itembillboards/CopperIngotsBillboard.tscn" type="PackedScene" id=13]
+[ext_resource path="res://itembillboards/IronIngotsBillboard.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
@@ -87,8 +93,26 @@ shape = SubResource( 5 )
 [node name="InputItemPad" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.462, 0.081, -1.569 )
 
+[node name="AluminumOreBillboard" parent="InputItemPad" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.85334, 0, 0 )
+
+[node name="CopperOreBillboard" parent="InputItemPad" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04226, 0, 0 )
+
+[node name="IronOreBillboard" parent="InputItemPad" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19046, 0, 0 )
+
 [node name="OutputItemPad" parent="." instance=ExtResource( 7 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.462, 0.081, 1.555 )
+
+[node name="AluminumIngotsBillboard" parent="OutputItemPad" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.76183, 0, 0 )
+
+[node name="CopperIngotsBillboard" parent="OutputItemPad" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49789, 0, 0 )
+
+[node name="IronIngotsBillboard" parent="OutputItemPad" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.998181, 0, 0 )
 
 [node name="chimney" type="CPUParticles" parent="."]
 transform = Transform( -0.0388237, 0, 0.999246, 0, 1, 0, -0.999246, 0, -0.0388237, -0.679, 3.04, 0.686 )
