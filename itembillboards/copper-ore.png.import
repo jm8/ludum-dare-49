@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/copper-ore.png-044760b4c6aba0c9ce255f4c1bfe7dbd.image"
+
+[deps]
+
+source_file="res://itembillboards/copper-ore.png"
+dest_files=[ "res://.import/copper-ore.png-044760b4c6aba0c9ce255f4c1bfe7dbd.image" ]
+
+[params]
+

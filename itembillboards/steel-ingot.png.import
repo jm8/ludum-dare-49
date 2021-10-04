@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/steel-ingot.png-189971a85baaaa64fabe19796debcc73.image"
+
+[deps]
+
+source_file="res://itembillboards/steel-ingot.png"
+dest_files=[ "res://.import/steel-ingot.png-189971a85baaaa64fabe19796debcc73.image" ]
+
+[params]
+
