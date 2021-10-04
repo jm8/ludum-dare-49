@@ -8,3 +8,4 @@ func _process(_delta):
 			var object = Globals.scenes[item].instance()
 			get_tree().current_scene.add_child(object)
 			object.global_transform.origin = $"Spawn Point".global_transform.origin
+			object.translation += Vector3(rand_range(-1.0, 1.0), 0.0, rand_range(-1.0, 1.0))

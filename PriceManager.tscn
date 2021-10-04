@@ -11,12 +11,13 @@ sale_goods = {
 "Aluminum Pipes": 2700.0,
 "Aluminum Sheets": 2700.0,
 "Circuits": 3800.0,
+"Contaminated Water": 200.0,
 "Copper": 1700.0,
 "Copper Beams": 2100.0,
 "Copper Paint": 4000.0,
 "Copper Pipes": 2100.0,
 "Copper Sheets": 2100.0,
-"Depleted Uranium": 300.0,
+"Depleted Uranium": 200.0,
 "Iron": 1200.0,
 "Iron Beams": 1600.0,
 "Iron Pipes": 1600.0,
@@ -35,6 +36,6 @@ purchase_goods = {
 "Glass": 1500.0,
 "Iron Ore": 1000.0,
 "Petroleum": 1500.0,
-"Uranium": 3000.0,
+"Uranium": 2000.0,
 "Water": 800.0
 }

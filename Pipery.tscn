@@ -59,6 +59,14 @@ power = 1.0
 recipes = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
 machine_name = "Pipery"
 capacity = {
+"Aluminum": 10.0,
+"Aluminum Pipes": 10.0,
+"Copper": 10.0,
+"Copper Pipes": 10.0,
+"Iron": 10.0,
+"Iron Pipes": 10.0,
+"Steel": 10.0,
+"Steel Pipes": 10.0
 }
 
 [node name="OutputItemPad" parent="." instance=ExtResource( 4 )]
