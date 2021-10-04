@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+
+uniform bool good = false;
+
+void fragment() {
+	ALPHA = 0.2;
+	if (good) {
+		ALBEDO = vec3(32, 32, 72);
+	} else {
+		ALBEDO = vec3(10, 1, 1);
+	}
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/good = false

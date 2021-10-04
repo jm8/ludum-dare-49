@@ -129,6 +129,7 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.032, 0.2, 2.528 )
 
 [node name="Machine" parent="." instance=ExtResource( 10 )]
 recipes = [ SubResource( 5 ) ]
+machine_name = "Reactor"
 capacity = {
 "Contaminated Water": 20.0,
 "Depleted Uranium": 20.0,
@@ -159,3 +160,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349898, 1.56936, 2.35099 )
 
 [node name="Spatial3" parent="particles" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.367213, 1.56936, 1.97101 )
+
+[node name="LabelPosition" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25032, 2.40186 )

@@ -1,6 +1,7 @@
 extends Node
 
 export(Array) var recipes
+export(String) var machine_name
 export(float) var speed = 0.2
 
 var current_recipe: int = -1
@@ -11,8 +12,12 @@ var broken: bool
 export(Dictionary) var capacity
 
 func _ready():
+	SignalBus.emit_signal("machine_created", self)
 	for item in capacity:
 		contents[item] = 0.0
+		
+func _exit_tree():
+	SignalBus.emit_signal("machine_destroyed", self)
 
 func is_active():
 	return (!broken) && current_recipe != -1
@@ -42,14 +47,12 @@ func _process(frame_delta):
 	timer += frame_delta
 	if timer > 0.5:
 		timer -= 0.5
-		if !broken && rand_range(0.0, 1.0) < 0.05:
-			print("Machine broken!")
-			broken = true
-	if !broken:
-		get_parent().get_node("particles").visible = false
-	if broken:
-		get_parent().get_node("particles").visible = true
-		return
+		#if !broken && rand_range(0.0, 1.0) < 0.05:
+			#print("Machine broken!")
+			#broken = true
+	var particles = get_parent().get_node("particles")
+	if particles:
+		particles.visible = broken
 
 	var delta = frame_delta * speed
 	var max_recipe: int = -1

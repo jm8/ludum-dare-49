@@ -24,18 +24,8 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide(velocity)
 	
-	#var normal = cast.get_collision_normal()
-	#var xform = align_with_y(mesh.global_transform, normal)
-	#mesh.global_transform = mesh.global_transform.interpolate_with(xform, 0.05)
-	
 	var tilt = rotate_strength * velocity.length() / 25
 	mesh.rotation.z = lerp(mesh.rotation.z, tilt, 10*delta)
-
-func align_with_y(xform, new_y):
-	xform.basis.y = new_y
-	xform.basis.x = -xform.basis.z.cross(new_y)
-	xform.basis = xform.basis.orthonormalized()
-	return xform
 
 ## Items
 
@@ -64,6 +54,13 @@ func _process(_delta):
 				item_to_pickup.attach_to(self)
 				held_items.push_back(item_to_pickup)
 				cannot_pick_up(item_to_pickup)
+				
+				for area in $CollectionArea.get_overlapping_areas():
+					if area is GameItem and !area.held_by:
+						if len(held_items) >= max_held_items:
+							too_full_to_pick_up(area)
+						else:
+							can_pick_up(area)
 		elif held_items.size() > 0:
 			var item = held_items[len(held_items)-1]
 			can_pick_up(item)

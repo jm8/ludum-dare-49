@@ -36,6 +36,7 @@ material/0 = SubResource( 1 )
 
 [node name="MachineExample" parent="." instance=ExtResource( 5 )]
 recipes = [ SubResource( 2 ) ]
+machine_name = "Plasticery"
 capacity = {
 "Petroleum": 10.0,
 "Plastic": 10.0

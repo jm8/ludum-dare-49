@@ -39,3 +39,7 @@ func on_price_pinned(button_pressed: bool, product: String):
 	else:
 		$HUD/PinnedPrices.get_node(product).queue_free()
 
+
+
+func _on_BuyMenuButton_pressed():
+	$ScrollContainer.visible = true

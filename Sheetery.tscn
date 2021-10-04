@@ -57,6 +57,7 @@ power = 1.0
 
 [node name="Machine" parent="." instance=ExtResource( 2 )]
 recipes = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ]
+machine_name = "Sheetery"
 capacity = {
 "Aluminum": 10.0,
 "Aluminum Sheets": 10.0,

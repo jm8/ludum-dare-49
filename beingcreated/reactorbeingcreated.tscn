@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://resources/models/machines/item_pad/dropoff.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://beingcreated/hologram_shader.tres" type="Material" id=9]
+[ext_resource path="res://beingcreated/NodeBeingCreated.tscn" type="PackedScene" id=10]
+[ext_resource path="res://resources/models/machines/reactor/reactor.obj" type="ArrayMesh" id=11]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 2.06044
+height = 3.36848
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.426202, 0.432962, 0.456245 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 2.1478, 0.543019, 2.14904 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 2.1478, 0.7, 2.14904 )
+
+[node name="reactorbeingcreated" instance=ExtResource( 10 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77395, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Area" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0055856, 0.48464, 2.15201 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Area" index="2"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.976, 0.35, 2.509 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="CollisionShape4" type="CollisionShape" parent="Area" index="3"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.032, 0.4, 2.528 )
+shape = SubResource( 4 )
+disabled = true
+
+[node name="reactor" type="MeshInstance" parent="." index="1"]
+mesh = ExtResource( 11 )
+material/0 = ExtResource( 9 )
+
+[node name="dropoff2" type="MeshInstance" parent="." index="2"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.976, 0.2, 2.509 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 9 )
+
+[node name="dropoff3" type="MeshInstance" parent="." index="3"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.032, 0.2, 2.528 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 9 )
