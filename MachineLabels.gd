@@ -1,6 +1,6 @@
 extends Control
 
-const MachineLabel = preload("res://beingcreated/MachineLabel.tscn")
+const MachineLabel = preload("res://MachineLabel.tscn")
 
 func _ready():
 	SignalBus.connect("machine_created", self, "_on_SignalBus_machine_created")

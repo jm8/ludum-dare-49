@@ -145,6 +145,9 @@ func _physics_process(delta):
 			creating.good = true
 			if !creating.get_node("Area").get_overlapping_bodies().empty():
 				creating.good = false
+			for area in creating.get_node("Area").get_overlapping_areas():
+				if area.name == "NoBuildArea":
+					creating.good = false
 			var floor_y = 2.33
 			if abs(creating.global_transform.origin.y - floor_y) > 0.1:
 				creating.good = false
@@ -152,7 +155,9 @@ func _physics_process(delta):
 				var node = creating_type.instance()
 				add_child(node)
 				node.global_transform = creating.global_transform
-				
+				var area = creating.get_node("Area")
+				area.name = "NoBuildArea"
+				node.add_child(area.duplicate())
 				creating.queue_free()
 				creating = null
 
