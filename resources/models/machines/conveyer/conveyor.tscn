@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://resources/models/machines/conveyer/conveyor.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://resources/models/machines/conveyer/conveyer.material" type="Material" id=2]
 [ext_resource path="res://resources/models/machines/conveyer/conveyor.gd" type="Script" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.769108, 1, 0.818458 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.23769, 0.339521, 0.497428 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.924125, 0.741239, 0.616716 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 3 )
@@ -19,3 +28,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29555, 1.77647, -0.403709 )
 light_color = Color( 0, 1, 0, 1 )
 light_energy = 2.0
 omni_range = 1.1
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape3" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02756, 1.04032, 0 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56257, 0.417776, 0 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.481434, 0.811966, 0 )
+shape = SubResource( 3 )

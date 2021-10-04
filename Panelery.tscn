@@ -10,13 +10,13 @@
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 6 )
-recipe_name = "pcb"
+recipe_name = "solar panel"
 inputs = {
-"Copper": 1.0,
-"Plastic": 1.0
+"Circuit": 1.0,
+"Glass": 1.0
 }
 outputs = {
-"Circuit": 1.0
+"Solar Panel": 1.0
 }
 power = 1.0
 
@@ -33,8 +33,8 @@ recipes = [ SubResource( 1 ) ]
 machine_name = "Printery"
 capacity = {
 "Circuit": 10.0,
-"Copper": 10.0,
-"Plastic": 10.0
+"Glass": 10.0,
+"Solar Panel": 10.0
 }
 
 [node name="OutputItemPad" parent="." instance=ExtResource( 2 )]
