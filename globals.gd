@@ -22,9 +22,12 @@ onready var scenes = {
 	"Steel Pipes": preload("res://items/SteelPipes.tscn"),
 	"Steel Sheets": preload("res://items/SteelSheets.tscn"),
 	"Water": preload("res://items/WaterBarrel.tscn"),
+	"Contaminated Water": preload("res://items/ContaminatedWaterBarrel.tscn"),
 	"Pertroleum": preload("res://items/PetroleumTank.tscn"),
 	"Carbon": preload("res://items/Carbon.tscn"),
 	"Plastic": preload("res://items/Plastic.tscn"),
+	"Uranium": preload("res://items/Uranium.tscn"),
+	"Depleted Uranium": preload("res://items/DepletedUranium.tscn"),
 }
 
 

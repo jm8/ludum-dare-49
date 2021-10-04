@@ -15,7 +15,7 @@ func is_active():
 
 func has_input(item: String) -> bool:
 	for recipe in recipes:
-		if recipes.inputs.has(item):
+		if recipe.inputs.has(item):
 			return true
 	return false
 	

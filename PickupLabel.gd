@@ -23,6 +23,6 @@ func _on_Droid_cannot_pick_up(new_item):
 
 func _on_Droid_too_full_to_pick_up(new_item):
 	item = new_item
-	text = too_full_format % [item.name]
+	text = too_full_format % [item.item_name]
 	set("custom_colors/font_color", Color.red)
 	visible = true
