@@ -104,7 +104,7 @@ func fill_corners(r):
 func fill_floor(r):
 	for x in irange(-r,r):
 		for z in irange(-r,r):
-			gridmap.set_cell_item(x,0,z,floors[0])
+			gridmap.set_cell_item(x,0,z,get_random_item(0,floors,floors))
 
 func remove_inner(r):
 	for x in irange(-r, r):
@@ -121,9 +121,11 @@ var creating = null
 var creating_type = null
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("close_price_menu"):
-		creating = null
-		creating_type = null
+	if creating and Input.is_action_just_pressed("ui_cancel"):
+			creating.queue_free()
+			creating = null
+			creating_type = null
+			Globals.money += machine_restore_price
 	if creating:
 		var space_state = get_world().direct_space_state
 		var mouse_position = get_viewport().get_mouse_position()
@@ -135,18 +137,24 @@ func _physics_process(delta):
 		if not intersection.empty():
 			var pos = intersection.position
 			creating.global_transform.origin = pos
-			creating.good = creating.get_node("Area").get_overlapping_bodies().empty()
-			if Input.is_action_just_pressed("place"):
+			creating.good = true
+			if !creating.get_node("Area").get_overlapping_bodies().empty():
+				creating.good = false
+			var floor_y = 2.33
+			if abs(creating.global_transform.origin.y - floor_y) > 0.1:
+				creating.good = false
+			if Input.is_action_just_pressed("place") and creating.good:
 				var node = creating_type.instance()
 				add_child(node)
-				print(pos)
 				node.global_transform.origin = pos
 				
 				creating.queue_free()
 				creating = null
 
+var machine_restore_price
 
 func _on_BuildUI_buy_machine(machine_name, price, inprogresstype, realtype):
 	creating = inprogresstype.instance()
 	add_child(creating)
 	creating_type = realtype
+	machine_restore_price = price

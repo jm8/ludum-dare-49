@@ -6,12 +6,14 @@ func _on_BuildButton_pressed():
 	visible = true
 
 func _process(delta):
-	if Input.is_action_just_pressed("close_price_menu"):
+	if Input.is_action_just_pressed("build_button"):
+		visible = !visible
+	if Input.is_action_just_pressed("ui_cancel"):
 		visible = false
 
 func _ready():
-	add_line("Smelter", 12, preload("res://beingcreated/smelterbeingcreated.tscn"), preload("res://scenes/smelter.tscn"))
-	add_line("Reactor", 48, preload("res://beingcreated/reactorbeingcreated.tscn"), preload("res://reactor.tscn"))	
+	add_line("Smelter", 1200, preload("res://beingcreated/smelterbeingcreated.tscn"), preload("res://scenes/smelter.tscn"))
+	add_line("Reactor", 49999, preload("res://beingcreated/reactorbeingcreated.tscn"), preload("res://reactor.tscn"))	
 	
 func add_line(machine_name, price, inprogresstype, realtype):
 	var x = preload("res://MachineBuyLine.tscn").instance()

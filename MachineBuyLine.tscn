@@ -34,9 +34,8 @@ text = "Reactor"
 
 [node name="Price" type="Label" parent="."]
 margin_left = 213.0
-margin_right = 816.0
+margin_right = 294.0
 margin_bottom = 67.0
-size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
 text = "€48"
 __meta__ = {
@@ -44,8 +43,8 @@ __meta__ = {
 }
 
 [node name="BuildButton" type="TextureButton" parent="."]
-margin_left = 856.0
-margin_right = 984.0
+margin_left = 334.0
+margin_right = 462.0
 margin_bottom = 67.0
 size_flags_horizontal = 5
 size_flags_vertical = 5

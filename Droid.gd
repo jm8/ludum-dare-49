@@ -54,6 +54,13 @@ func _process(_delta):
 				item_to_pickup.attach_to(self)
 				held_items.push_back(item_to_pickup)
 				cannot_pick_up(item_to_pickup)
+				
+				for area in $CollectionArea.get_overlapping_areas():
+					if area is GameItem and !area.held_by:
+						if len(held_items) >= max_held_items:
+							too_full_to_pick_up(area)
+						else:
+							can_pick_up(area)
 		elif held_items.size() > 0:
 			var item = held_items[len(held_items)-1]
 			can_pick_up(item)
