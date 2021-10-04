@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/water-barrel.png-003fae4c79a1f5098348e6f1e94ea540.image"
+
+[deps]
+
+source_file="res://itembillboards/water-barrel.png"
+dest_files=[ "res://.import/water-barrel.png-003fae4c79a1f5098348e6f1e94ea540.image" ]
+
+[params]
+
