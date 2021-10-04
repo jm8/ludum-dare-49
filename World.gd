@@ -19,10 +19,6 @@ func _ready():
 	get_block_names()
 	generate(size)
 	
-	creating = preload("res://beingcreated/reactorbeingcreated.tscn").instance()
-	add_child(creating)
-	creating_type = preload("res://reactor.tscn")
-	
 func get_block_names():
 	for id in gridmap.mesh_library.get_item_list():
 		var name = gridmap.mesh_library.get_item_name(id)
@@ -125,6 +121,9 @@ var creating = null
 var creating_type = null
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("close_price_menu"):
+		creating = null
+		creating_type = null
 	if creating:
 		var space_state = get_world().direct_space_state
 		var mouse_position = get_viewport().get_mouse_position()
@@ -145,3 +144,9 @@ func _physics_process(delta):
 				
 				creating.queue_free()
 				creating = null
+
+
+func _on_BuildUI_buy_machine(machine_name, price, inprogresstype, realtype):
+	creating = inprogresstype.instance()
+	add_child(creating)
+	creating_type = realtype
