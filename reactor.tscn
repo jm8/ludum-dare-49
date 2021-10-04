@@ -39,7 +39,7 @@ frame_7/delay_sec = 0.0
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = SubResource( 1 )
 
-[sub_resource type="CylinderShape" id=6]
+[sub_resource type="CylinderShape" id=3]
 radius = 2.06044
 height = 3.36848
 
@@ -114,7 +114,7 @@ omni_range = 1.83108
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77395, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0055856, 0.48464, 2.15201 )
@@ -128,10 +128,9 @@ transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 1.032, 0.2, 2.528 )
 
 [node name="Machine" parent="." instance=ExtResource( 10 )]
 recipes = [ SubResource( 5 ) ]
-speed = 0.0
 capacity = {
-"Contaminated Water": 120.0,
-"Depleted Uranium": 114.0,
-"Uranium": 120.0,
-"Water": 120.0
+"Contaminated Water": 20.0,
+"Depleted Uranium": 20.0,
+"Uranium": 20.0,
+"Water": 20.0
 }

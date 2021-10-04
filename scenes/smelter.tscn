@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://resources/models/machines/smelter/smelter.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://resources/models/machines/smelter/texture.png" type="Texture" id=2]
 [ext_resource path="res://machine.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Recipe.gd" type="Script" id=4]
 [ext_resource path="res://scenes/smelter.gd" type="Script" id=5]
+[ext_resource path="res://scenes/InputItemPad.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/OutputItemPad.tscn" type="PackedScene" id=7]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
@@ -76,3 +78,9 @@ capacity = {
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80814, -2.67947, -3.8926 )
 shape = SubResource( 5 )
+
+[node name="InputItemPad" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.32, -3.6, -5.468 )
+
+[node name="OutputItemPad" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.32, -3.6, -2.344 )
