@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/pcb.png-b301b8906a4a9dec1c69dbed3f03880a.image"
+
+[deps]
+
+source_file="res://itembillboards/pcb.png"
+dest_files=[ "res://.import/pcb.png-b301b8906a4a9dec1c69dbed3f03880a.image" ]
+
+[params]
+
