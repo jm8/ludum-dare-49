@@ -42,15 +42,16 @@ class Item:
 			trend = -0.01
 		else:
 			trend = 0.02
+			
 		#determine volatilty
 		r = rng.randf()
 		if r < 0.04:
 			volatility = 0.05
 		elif r < 0.96:
-			volatility = 0.02
+			volatility = 0.05
 		else:
-			volatility = 0.01
-
+			volatility = 0.05
+		volatility = volatility * 100
 	# gets the next price for an item
 	func next_price():
 		if prices.size() > 127:
@@ -74,8 +75,9 @@ var items: Dictionary
 
 func _process(delta):
 	time += delta
-	if time > 2.0:
-		time -= 2.0
+	var timestep = 0.1
+	if time > timestep:
+		time -= timestep
 		for item in items:
 			items[item].next_price()
 	

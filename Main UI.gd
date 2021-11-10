@@ -8,12 +8,11 @@ var initialized: bool = false
 func _process(_delta):
 	if not initialized:
 		initialized = true
-		for product in PriceManager.items:
-			var graph = price_graph_scene.instance()
-			graph.product_name = product
-			graph.name = product
-			graph.get_node("VBoxContainer/HBoxContainer/CenterContainer/PinButton").connect("toggled", self, "on_price_pinned", [product])
-			$PriceGrid.add_child(graph)
+		var graph = price_graph_scene.instance()
+		#graph.product_name = product
+		#graph.name = product
+		#graph.get_node("VBoxContainer/HBoxContainer/CenterContainer/PinButton").connect("toggled", self, "on_price_pinned", [product])
+		$PriceGrid.add_child(graph)
 		
 	for child in $HUD/PinnedPrices.get_children():
 		if child.name == "MenuLabel":
